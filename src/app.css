@@ -631,7 +631,7 @@
 .token-card-preview {
   display: block;
   height: calc(var(--layout-spacing-16) + var(--layout-spacing-2));
-  border-radius: var(--layout-radius-xs) var(--layout-radius-xs) var(--layout-radius-none) var(--layout-radius-none);
+  border-radius: var(--layout-radius-sm) var(--layout-radius-sm) var(--layout-radius-none) var(--layout-radius-none);
   background-color: var(--swatch-backdrop);
   background-image: linear-gradient(var(--swatch-color), var(--swatch-color));
 }
@@ -693,7 +693,7 @@
   display: block;
   width: 100%;
   height: calc(var(--layout-spacing-16) + var(--layout-spacing-12));
-  border-radius: var(--layout-radius-xs) var(--layout-radius-xs) var(--layout-radius-none) var(--layout-radius-none);
+  border-radius: var(--layout-radius-sm) var(--layout-radius-sm) var(--layout-radius-none) var(--layout-radius-none);
   background: var(--gradient);
 }
 
