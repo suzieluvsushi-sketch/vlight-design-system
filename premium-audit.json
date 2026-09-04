@@ -1,0 +1,32 @@
+{
+  "findings": [
+    {
+      "category": "unresolved",
+      "file": "src/pages/SelectPage.tsx",
+      "line": 110,
+      "message": "Native select is used without an explicit ownership decision.",
+      "remediation": "Record Select/Listbox as native or reuse the authored canonical owner.",
+      "ruleId": "ownership.native-select-undecided",
+      "severity": "error"
+    },
+    {
+      "category": "violation",
+      "file": "src/components/ui/tabs.css",
+      "line": 18,
+      "message": "Scrollbar theme does not provide both standards-based scrollbar properties.",
+      "remediation": "Add global scrollbar-color and scrollbar-width standards properties plus fallbacks.",
+      "ruleId": "scrollbar.webkit-only",
+      "severity": "error"
+    }
+  ],
+  "mode": "strict",
+  "projectRoot": "/Users/xinshu/Documents/codex vibecoding/vlight design system storybook",
+  "schemaVersion": 1,
+  "summary": {
+    "errors": 2,
+    "total": 2,
+    "unresolved": 1,
+    "violations": 1,
+    "warnings": 0
+  }
+}

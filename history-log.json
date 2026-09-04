@@ -1,0 +1,97 @@
+{
+  "$schema": "./history-log.schema.json",
+  "schemaVersion": "1.0.0",
+  "entries": [
+    {
+      "id": "2026-09-04-message-action-icon-centering",
+      "date": "2026-09-04",
+      "object": {
+        "type": "component",
+        "id": "component.message",
+        "name": "Message"
+      },
+      "summary": "Centered every Message icon-only action glyph within its hit area.",
+      "reason": "Keep all icon-only Button icons on the Message page centered within their hit areas.",
+      "changes": [
+        {
+          "kind": "visual",
+          "property": "Icon alignment",
+          "before": {
+            "reference": "20px icon / 16px slot",
+            "value": "2px off-center"
+          },
+          "after": {
+            "reference": "layout/icon-size/20",
+            "value": "Centered"
+          }
+        }
+      ],
+      "affectedAssets": [
+        "component.message"
+      ]
+    },
+    {
+      "id": "2026-09-04-message-standard-button-sizing",
+      "date": "2026-09-04",
+      "object": {
+        "type": "component",
+        "id": "component.message",
+        "name": "Message"
+      },
+      "summary": "Removed Message-specific overrides from action Buttons.",
+      "reason": "Use the component library's published Button sizes and prohibit consumers from modifying encapsulated component styles.",
+      "changes": [
+        {
+          "kind": "visual",
+          "property": "Action Button size",
+          "before": {
+            "reference": "Message override",
+            "value": "32px control / 20px icon"
+          },
+          "after": {
+            "reference": "Small icon-only Button",
+            "value": "32px control / 16px icon"
+          }
+        },
+        {
+          "kind": "guideline",
+          "property": "Component styling",
+          "before": {
+            "value": "Consumer override"
+          },
+          "after": {
+            "value": "Published Button API"
+          }
+        }
+      ],
+      "affectedAssets": [
+        "component.message"
+      ]
+    },
+    {
+      "id": "2026-09-04-ghost-neutral-content-strong-token",
+      "date": "2026-09-04",
+      "object": {
+        "type": "foundation",
+        "id": "foundation.component-tokens",
+        "name": "Component Tokens"
+      },
+      "summary": "Added a stronger content color token for Ghost Neutral Buttons.",
+      "reason": "Provide Ghost Neutral Button content with an additional one-step darker color option.",
+      "changes": [
+        {
+          "kind": "asset-added",
+          "property": "Darker content option",
+          "before": null,
+          "after": {
+            "reference": "text/secondary",
+            "value": "#373D52 (Neutral 700)"
+          }
+        }
+      ],
+      "affectedAssets": [
+        "foundation.component-tokens"
+      ]
+    }
+  ]
+}

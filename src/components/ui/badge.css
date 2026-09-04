@@ -1,0 +1,124 @@
+.vlight-badge {
+  --vlight-badge-container: var(--component-badge-neutral-container);
+  --vlight-badge-content: var(--component-badge-neutral-content);
+  --vlight-badge-border: var(--color-base-transparent);
+  --vlight-badge-tone-container: var(--component-badge-neutral-container);
+  --vlight-badge-tone-content: var(--component-badge-neutral-content);
+  --vlight-badge-tone-border: var(--component-badge-neutral-border);
+  --vlight-badge-solid-container: var(--color-semantic-background-inverse);
+  --vlight-badge-height: var(--layout-control-height-mini);
+  --vlight-badge-padding: var(--layout-padding-sm);
+  --vlight-badge-gap: var(--layout-spacing-1);
+  --vlight-badge-icon-size: var(--layout-icon-size-12);
+
+  display: inline-flex;
+  height: var(--vlight-badge-height);
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vlight-badge-gap);
+  box-sizing: border-box;
+  padding: var(--layout-padding-none) var(--vlight-badge-padding);
+  border: var(--layout-stroke-width-1) solid var(--vlight-badge-border);
+  border-radius: var(--layout-radius-full);
+  color: var(--vlight-badge-content);
+  background: var(--vlight-badge-container);
+  font-family: var(--typography-font-family-body), sans-serif;
+  font-size: var(--typography-font-size-12);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: var(--typography-line-height-16);
+  white-space: nowrap;
+}
+
+.vlight-badge__label {
+  min-width: 0;
+}
+
+.vlight-badge__icon {
+  display: inline-grid;
+  width: var(--vlight-badge-icon-size);
+  height: var(--vlight-badge-icon-size);
+  flex: 0 0 var(--vlight-badge-icon-size);
+  place-items: center;
+}
+
+.vlight-badge__icon svg,
+.vlight-badge__icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.vlight-badge.is-neutral {
+  --vlight-badge-tone-container: var(--component-badge-neutral-container);
+  --vlight-badge-tone-content: var(--component-badge-neutral-content);
+  --vlight-badge-tone-border: var(--component-badge-neutral-border);
+  --vlight-badge-solid-container: var(--color-semantic-background-inverse);
+}
+
+.vlight-badge.is-purple {
+  --vlight-badge-tone-container: var(--component-badge-purple-container);
+  --vlight-badge-tone-content: var(--component-badge-purple-content);
+  --vlight-badge-tone-border: var(--component-badge-purple-border);
+  --vlight-badge-solid-container: var(--color-semantic-brand-purple);
+}
+
+.vlight-badge.is-violet {
+  --vlight-badge-tone-container: var(--component-badge-violet-container);
+  --vlight-badge-tone-content: var(--component-badge-violet-content);
+  --vlight-badge-tone-border: var(--component-badge-violet-border);
+  --vlight-badge-solid-container: var(--color-semantic-brand-violet);
+}
+
+.vlight-badge.is-blue {
+  --vlight-badge-tone-container: var(--component-badge-blue-container);
+  --vlight-badge-tone-content: var(--component-badge-blue-content);
+  --vlight-badge-tone-border: var(--component-badge-blue-border);
+  --vlight-badge-solid-container: var(--color-semantic-info-contentlight);
+}
+
+.vlight-badge.is-success {
+  --vlight-badge-tone-container: var(--component-badge-success-container);
+  --vlight-badge-tone-content: var(--component-badge-success-content);
+  --vlight-badge-tone-border: var(--component-badge-success-border);
+  --vlight-badge-solid-container: var(--color-semantic-success-contentlight);
+}
+
+.vlight-badge.is-warning {
+  --vlight-badge-tone-container: var(--component-badge-warning-container);
+  --vlight-badge-tone-content: var(--component-badge-warning-content);
+  --vlight-badge-tone-border: var(--component-badge-warning-border);
+  --vlight-badge-solid-container: var(--color-semantic-warning-contentlight);
+}
+
+.vlight-badge.is-error {
+  --vlight-badge-tone-container: var(--component-badge-error-container);
+  --vlight-badge-tone-content: var(--component-badge-error-content);
+  --vlight-badge-tone-border: var(--component-badge-error-border);
+  --vlight-badge-solid-container: var(--color-semantic-danger-content);
+}
+
+.vlight-badge.is-soft {
+  --vlight-badge-container: var(--vlight-badge-tone-container);
+  --vlight-badge-content: var(--vlight-badge-tone-content);
+  --vlight-badge-border: var(--color-base-transparent);
+}
+
+.vlight-badge.is-outline {
+  --vlight-badge-container: var(--color-semantic-background-surface);
+  --vlight-badge-content: var(--vlight-badge-tone-content);
+  --vlight-badge-border: var(--vlight-badge-tone-border);
+}
+
+.vlight-badge.is-solid {
+  --vlight-badge-container: var(--vlight-badge-solid-container);
+  --vlight-badge-content: var(--color-semantic-text-inverse);
+  --vlight-badge-border: var(--color-base-transparent);
+}
+
+.vlight-badge.is-medium {
+  --vlight-badge-height: var(--layout-control-height-small);
+  --vlight-badge-padding: var(--layout-padding-md);
+  --vlight-badge-gap: var(--layout-spacing-2);
+  --vlight-badge-icon-size: var(--layout-icon-size-16);
+}

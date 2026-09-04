@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open VLight Design System Preview</title>
+  </head>
+  <body>
+    <p>
+      Opening the VLight Design System preview…
+      <a id="preview-link" href="./static-preview/index.html">Open preview</a>
+    </p>
+    <script>
+      const staticTarget = new URL("./static-preview/index.html", window.location.href)
+      const liveTarget = new URL("http://127.0.0.1:5173/")
+      staticTarget.search = window.location.search
+      liveTarget.search = window.location.search
+      document.getElementById("preview-link").href = staticTarget.href
+
+      const timeout = new Promise((_, reject) => {
+        window.setTimeout(() => reject(new Error("Preview server unavailable")), 800)
+      })
+
+      Promise.race([
+        fetch(liveTarget.href, { cache: "no-store", mode: "no-cors" }),
+        timeout,
+      ]).then(
+        () => window.location.replace(liveTarget.href),
+        () => window.location.replace(staticTarget.href),
+      )
+    </script>
+  </body>
+</html>

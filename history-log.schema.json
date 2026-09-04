@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vlight.local/schemas/history-log.schema.json",
+  "title": "VLight Design System History Log",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "entries"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": "1.0.0" },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "$defs": {
+    "state": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "reference": { "type": "string", "minLength": 1 },
+        "value": { "type": "string", "minLength": 1 }
+      },
+      "anyOf": [
+        { "required": ["reference"] },
+        { "required": ["value"] },
+        { "type": "null" }
+      ]
+    },
+    "change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "property", "before", "after"],
+      "properties": {
+        "kind": {
+          "enum": [
+            "asset-added",
+            "asset-removed",
+            "asset-renamed",
+            "token-value",
+            "token-reference",
+            "token-renamed",
+            "dimension",
+            "visual",
+            "behavior",
+            "guideline"
+          ]
+        },
+        "property": { "type": "string", "minLength": 1 },
+        "before": { "$ref": "#/$defs/state" },
+        "after": { "$ref": "#/$defs/state" }
+      }
+    },
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "date", "object", "summary", "reason", "changes", "affectedAssets"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+$" },
+        "date": { "type": "string", "format": "date" },
+        "object": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "id", "name"],
+          "properties": {
+            "type": { "enum": ["foundation", "icon", "component"] },
+            "id": { "type": "string", "minLength": 1 },
+            "name": { "type": "string", "minLength": 1 }
+          }
+        },
+        "summary": { "type": "string", "minLength": 1 },
+        "reason": { "type": "string", "minLength": 1 },
+        "changes": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/change" }
+        },
+        "affectedAssets": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

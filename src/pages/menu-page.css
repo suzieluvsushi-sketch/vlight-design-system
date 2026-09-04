@@ -1,0 +1,223 @@
+.menu-page .page-section > * {
+  width: calc(100% - var(--layout-padding-3xl) * 2);
+  max-width: var(--docs-component-rail-width);
+  margin-inline: auto;
+}
+
+.menu-page .menu-usage-section {
+  border-top: var(--layout-radius-none);
+}
+
+.menu-page #examples > .section-heading,
+.menu-page #examples > .menu-example-grid {
+  width: calc(100% - var(--layout-spacing-10));
+}
+
+.menu-examples-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--layout-spacing-4);
+  flex-wrap: wrap;
+}
+
+.menu-examples-heading > div {
+  display: grid;
+  gap: var(--layout-spacing-2);
+}
+
+.menu-example-status {
+  min-height: var(--typography-line-height-20);
+  padding: var(--layout-padding-sm) var(--layout-padding-md);
+  border-radius: var(--layout-radius-sm);
+  color: var(--color-semantic-text-secondary);
+  background: var(--color-semantic-background-subtle);
+  font-size: var(--typography-font-size-12);
+  line-height: var(--typography-line-height-20);
+}
+
+.menu-example-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: var(--layout-spacing-6);
+}
+
+.menu-example-card {
+  display: grid;
+  min-width: 0;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  border: var(--layout-stroke-width-1) solid var(--color-semantic-border-subtle);
+  border-radius: var(--layout-radius-lg);
+  background: var(--color-semantic-background-surface);
+}
+
+.menu-example-card.is-wide {
+  grid-column: 1 / -1;
+}
+
+.menu-example-meta {
+  display: grid;
+  padding: var(--layout-padding-md) var(--layout-padding-base);
+  border-bottom: var(--layout-stroke-width-1) solid var(--color-semantic-border-divider);
+  border-radius:
+    var(--layout-radius-lg) var(--layout-radius-lg)
+    var(--layout-radius-none) var(--layout-radius-none);
+  background: var(--color-semantic-background-subtle);
+}
+
+.menu-example-meta h3,
+.menu-guideline-grid h3 {
+  margin: var(--layout-spacing-0);
+  color: var(--color-semantic-text-primary);
+  font-family: var(--typography-font-family-display), sans-serif;
+  font-size: var(--typography-font-size-14);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: var(--typography-line-height-22);
+}
+
+.menu-guideline-grid h3 {
+  font-size: var(--typography-font-size-16);
+  line-height: var(--typography-line-height-24);
+}
+
+.menu-example-preview {
+  display: flex;
+  position: relative;
+  min-height: calc(var(--layout-spacing-16) * 2 + var(--layout-spacing-8));
+  align-items: center;
+  justify-content: center;
+  padding: var(--layout-padding-xl);
+}
+
+.menu-live-preview {
+  min-height: 0;
+  padding: var(--layout-padding-lg);
+}
+
+.menu-state-board {
+  display: grid;
+  min-height: 0;
+  justify-content: stretch;
+  gap: var(--layout-spacing-6);
+}
+
+.menu-state-sample {
+  display: grid;
+  min-width: 0;
+  justify-items: start;
+  gap: var(--layout-spacing-3);
+}
+
+.menu-item-specimen {
+  width: min(100%, var(--component-menu-content-width));
+}
+
+.menu-specimen-label {
+  color: var(--color-semantic-text-tertiary);
+  font-size: var(--typography-font-size-12);
+  font-weight: var(--typography-font-weight-semibold);
+  line-height: var(--typography-line-height-18);
+}
+
+.menu-item-specimen[data-demo-state="hover"] {
+  background: var(--component-menu-item-hover-container);
+}
+
+.menu-item-specimen[data-tone="danger"][data-demo-state="hover"] {
+  background: var(--component-menu-item-danger-hover-container);
+}
+
+.menu-item-specimen[data-demo-state="focus"],
+.menu-item-specimen:focus-visible {
+  background: var(--component-menu-item-focus-container);
+  box-shadow: inset 0 0 0 var(--layout-stroke-width-2)
+    var(--component-menu-item-focus-ring);
+}
+
+.menu-item-specimen[data-tone="danger"][data-demo-state="focus"],
+.menu-item-specimen[data-tone="danger"]:focus-visible {
+  background: var(--component-menu-item-danger-focus-container);
+}
+
+.menu-guideline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--layout-spacing-4);
+}
+
+.menu-guideline-grid article {
+  padding: var(--layout-padding-lg);
+  border: var(--layout-stroke-width-1) solid var(--color-semantic-border-subtle);
+  border-radius: var(--layout-radius-md);
+  background: var(--color-semantic-background-surface);
+}
+
+.menu-guideline-grid p {
+  margin: var(--layout-spacing-1) var(--layout-spacing-0) var(--layout-spacing-0);
+  color: var(--color-semantic-text-secondary);
+  font-size: var(--typography-font-size-14);
+  line-height: var(--typography-line-height-20);
+}
+
+.menu-props-table-wrap {
+  overflow-x: auto;
+  border: var(--layout-stroke-width-1) solid var(--color-semantic-border-subtle);
+  border-radius: var(--layout-radius-md);
+}
+
+.menu-props-table {
+  width: 100%;
+  min-width: var(--docs-wide-table-min-width);
+  border-collapse: collapse;
+  color: var(--color-semantic-text-secondary);
+  font-size: var(--typography-font-size-14);
+  line-height: var(--typography-line-height-20);
+  text-align: left;
+}
+
+.menu-props-table th,
+.menu-props-table td {
+  padding: var(--layout-padding-base) var(--layout-padding-lg);
+  border-bottom: var(--layout-stroke-width-1) solid var(--color-semantic-border-subtle);
+  vertical-align: top;
+}
+
+.menu-props-table th {
+  color: var(--color-semantic-text-secondary);
+  background: var(--color-semantic-background-subtle);
+  font-weight: var(--typography-font-weight-semibold);
+}
+
+.menu-props-table tr:last-child td {
+  border-bottom: var(--layout-radius-none);
+}
+
+.menu-props-table code {
+  color: var(--color-semantic-text-primary);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: var(--typography-font-size-12);
+}
+
+@media (max-width: 72rem) {
+  .menu-example-grid,
+  .menu-guideline-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .menu-example-card.is-wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 49rem) {
+  .menu-page .page-section > * {
+    width: calc(100% - var(--layout-padding-lg) * 2);
+  }
+
+  .menu-page #examples > .section-heading,
+  .menu-page #examples > .menu-example-grid {
+    width: calc(100% - var(--layout-spacing-10));
+  }
+}

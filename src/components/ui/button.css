@@ -1,0 +1,442 @@
+.vlight-button {
+  --vlight-button-container: var(--component-button-neutral-primary-container);
+  --vlight-button-content: var(--component-button-neutral-primary-content);
+  --vlight-button-border: var(--component-button-neutral-primary-border);
+  --vlight-button-hover-layer: var(--component-button-state-inverse-filled-hover-layer);
+  --vlight-button-pressed-layer: var(--component-button-state-inverse-filled-pressed-layer);
+  --vlight-button-height: var(--layout-control-height-medium);
+  --vlight-button-radius: var(--layout-radius-md);
+  --vlight-button-padding: var(--layout-padding-base);
+  --vlight-button-gap: var(--layout-spacing-1);
+  --vlight-button-icon-size: var(--layout-icon-size-20);
+
+  display: inline-flex;
+  position: relative;
+  z-index: 0;
+  height: var(--vlight-button-height);
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vlight-button-gap);
+  padding: var(--layout-padding-none) var(--vlight-button-padding);
+  overflow: visible;
+  border: var(--layout-stroke-width-1) solid var(--vlight-button-border);
+  border-radius: var(--vlight-button-radius);
+  color: var(--vlight-button-content);
+  background: var(--vlight-button-container);
+  font-family: var(--typography-font-family-body), sans-serif;
+  font-size: var(--typography-font-size-14);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: var(--typography-line-height-20);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  appearance: none;
+  isolation: isolate;
+  transition: border-color 120ms ease, color 120ms ease, background-color 120ms ease;
+}
+
+.vlight-button__state-layer {
+  position: absolute;
+  z-index: -1;
+  inset: calc(var(--layout-stroke-width-1) * -1);
+  border-radius: inherit;
+  background: var(--color-base-transparent);
+  pointer-events: none;
+  transition: background-color 120ms ease;
+}
+
+.vlight-button:hover:not(:disabled) .vlight-button__state-layer {
+  background: var(--vlight-button-hover-layer);
+}
+
+.vlight-button:active:not(:disabled) .vlight-button__state-layer {
+  background: var(--vlight-button-pressed-layer);
+}
+
+.vlight-button:focus-visible {
+  outline: var(--layout-stroke-width-2) solid var(--component-button-state-focus-ring);
+  outline-offset: var(--layout-stroke-width-1);
+}
+
+.vlight-button:disabled {
+  color: var(--component-button-state-disabled-content);
+  cursor: not-allowed;
+}
+
+.vlight-button[data-loading] {
+  cursor: wait;
+}
+
+.vlight-button.is-primary:disabled,
+.vlight-button.is-secondary:disabled {
+  border-color: var(--component-button-state-disabled-filled-border);
+  background: var(--component-button-state-disabled-filled-container);
+}
+
+.vlight-button.is-ghost:disabled {
+  border-color: var(--color-base-transparent);
+  background: var(--component-button-state-disabled-transparent-container);
+}
+
+.vlight-button.is-outlined:disabled {
+  border-color: var(--component-button-state-disabled-outlined-border);
+  background: var(--component-button-state-disabled-transparent-container);
+}
+
+.vlight-button__label,
+.vlight-button__icon {
+  position: relative;
+  z-index: 1;
+}
+
+.vlight-button__icon {
+  display: inline-grid;
+  width: var(--vlight-button-icon-size);
+  height: var(--vlight-button-icon-size);
+  flex: 0 0 var(--vlight-button-icon-size);
+  place-items: center;
+}
+
+.vlight-button__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.vlight-button__spinner {
+  animation: vlight-button-spin 760ms linear infinite;
+}
+
+.vlight-button.is-brand.is-primary {
+  --vlight-button-container: var(--component-button-brand-primary-container);
+  --vlight-button-content: var(--component-button-brand-primary-content);
+  --vlight-button-border: var(--component-button-brand-primary-border);
+  --vlight-button-hover-layer: var(--component-button-state-strong-filled-hover-layer);
+  --vlight-button-pressed-layer: var(--component-button-state-strong-filled-pressed-layer);
+}
+
+.vlight-button.is-brand.is-secondary {
+  --vlight-button-container: var(--component-button-brand-secondary-container);
+  --vlight-button-content: var(--component-button-brand-secondary-content);
+  --vlight-button-border: var(--component-button-brand-secondary-border);
+  --vlight-button-hover-layer: var(--component-button-state-soft-filled-hover-layer);
+  --vlight-button-pressed-layer: var(--component-button-state-soft-filled-pressed-layer);
+}
+
+.vlight-button.is-brand.is-ghost {
+  --vlight-button-container: var(--component-button-brand-ghost-container);
+  --vlight-button-content: var(--component-button-brand-ghost-content);
+  --vlight-button-border: var(--component-button-brand-ghost-border);
+  --vlight-button-hover-layer: var(--component-button-state-transparent-hover-layer);
+  --vlight-button-pressed-layer: var(--component-button-state-transparent-pressed-layer);
+}
+
+.vlight-button.is-brand.is-outlined {
+  --vlight-button-container: var(--component-button-brand-outlined-container);
+  --vlight-button-content: var(--component-button-brand-outlined-content);
+  --vlight-button-border: var(--component-button-brand-outlined-border);
+  --vlight-button-hover-layer: var(--component-button-state-transparent-hover-layer);
+  --vlight-button-pressed-layer: var(--component-button-state-transparent-pressed-layer);
+}
+
+.vlight-button.is-neutral.is-primary {
+  --vlight-button-container: var(--component-button-neutral-primary-container);
+  --vlight-button-content: var(--component-button-neutral-primary-content);
+  --vlight-button-border: var(--component-button-neutral-primary-border);
+  --vlight-button-hover-layer: var(--component-button-state-inverse-filled-hover-layer);
+  --vlight-button-pressed-layer: var(--component-button-state-inverse-filled-pressed-layer);
+}
+
+.vlight-button.is-neutral.is-secondary {
+  --vlight-button-container: var(--component-button-neutral-secondary-container);
+  --vlight-button-content: var(--component-button-neutral-secondary-content);
+  --vlight-button-border: var(--component-button-neutral-secondary-border);
+  --vlight-button-hover-layer: var(--component-button-state-soft-filled-hover-layer);
+  --vlight-button-pressed-layer: var(--component-button-state-soft-filled-pressed-layer);
+}
+
+.vlight-button.is-neutral.is-ghost {
+  --vlight-button-container: var(--component-button-neutral-ghost-container);
+  --vlight-button-content: var(--component-button-neutral-ghost-content);
+  --vlight-button-border: var(--component-button-neutral-ghost-border);
+  --vlight-button-hover-layer: var(--component-button-state-transparent-hover-layer);
+  --vlight-button-pressed-layer: var(--component-button-state-transparent-pressed-layer);
+}
+
+.vlight-button.is-neutral.is-outlined {
+  --vlight-button-container: var(--component-button-neutral-outlined-container);
+  --vlight-button-content: var(--component-button-neutral-outlined-content);
+  --vlight-button-border: var(--component-button-neutral-outlined-border);
+  --vlight-button-hover-layer: var(--component-button-state-transparent-hover-layer);
+  --vlight-button-pressed-layer: var(--component-button-state-transparent-pressed-layer);
+}
+
+.vlight-button.is-danger.is-primary {
+  --vlight-button-container: var(--component-button-danger-primary-container);
+  --vlight-button-content: var(--component-button-danger-primary-content);
+  --vlight-button-border: var(--component-button-danger-primary-border);
+  --vlight-button-hover-layer: var(--component-button-state-strong-filled-hover-layer);
+  --vlight-button-pressed-layer: var(--component-button-state-strong-filled-pressed-layer);
+}
+
+.vlight-button.is-danger.is-secondary {
+  --vlight-button-container: var(--component-button-danger-secondary-container);
+  --vlight-button-content: var(--component-button-danger-secondary-content);
+  --vlight-button-border: var(--component-button-danger-secondary-border);
+  --vlight-button-hover-layer: var(--component-button-state-soft-filled-hover-layer);
+  --vlight-button-pressed-layer: var(--component-button-state-soft-filled-pressed-layer);
+}
+
+.vlight-button.is-danger.is-ghost {
+  --vlight-button-container: var(--component-button-danger-ghost-container);
+  --vlight-button-content: var(--component-button-danger-ghost-content);
+  --vlight-button-border: var(--component-button-danger-ghost-border);
+  --vlight-button-hover-layer: var(--component-button-state-transparent-hover-layer);
+  --vlight-button-pressed-layer: var(--component-button-state-transparent-pressed-layer);
+}
+
+.vlight-button.is-danger.is-outlined {
+  --vlight-button-container: var(--component-button-danger-outlined-container);
+  --vlight-button-content: var(--component-button-danger-outlined-content);
+  --vlight-button-border: var(--component-button-danger-outlined-border);
+  --vlight-button-hover-layer: var(--component-button-state-transparent-hover-layer);
+  --vlight-button-pressed-layer: var(--component-button-state-transparent-pressed-layer);
+}
+
+.vlight-button.is-mini {
+  --vlight-button-height: var(--layout-control-height-mini);
+  --vlight-button-radius: var(--layout-radius-sm);
+  --vlight-button-padding: var(--layout-padding-sm);
+  --vlight-button-gap: var(--layout-spacing-1);
+  --vlight-button-icon-size: var(--layout-icon-size-12);
+  font-size: var(--typography-font-size-12);
+  line-height: var(--typography-line-height-16);
+}
+
+.vlight-button.is-small {
+  --vlight-button-height: var(--layout-control-height-small);
+  --vlight-button-padding: var(--layout-padding-md);
+  --vlight-button-gap: var(--layout-spacing-1);
+  --vlight-button-icon-size: var(--layout-icon-size-16);
+}
+
+.vlight-button.is-medium {
+  --vlight-button-height: var(--layout-control-height-medium);
+  --vlight-button-padding: var(--layout-padding-base);
+  --vlight-button-gap: var(--layout-spacing-1);
+  --vlight-button-icon-size: var(--layout-icon-size-20);
+}
+
+.vlight-button.is-large {
+  --vlight-button-height: var(--layout-control-height-large);
+  --vlight-button-padding: var(--layout-padding-base);
+  --vlight-button-gap: var(--layout-spacing-1);
+  --vlight-button-icon-size: var(--layout-icon-size-20);
+  font-size: var(--typography-font-size-16);
+  line-height: var(--typography-line-height-24);
+}
+
+.vlight-button.is-icon-only {
+  width: var(--vlight-button-height);
+  padding-inline: var(--layout-padding-none);
+}
+
+.vlight-button.is-small.is-icon-only {
+  --vlight-button-icon-size: var(--layout-icon-size-16);
+}
+
+.vlight-split-button {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  color: var(--component-button-neutral-primary-content);
+  font-family: var(--typography-font-family-body), sans-serif;
+  font-size: var(--typography-font-size-14);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: var(--typography-line-height-20);
+}
+
+.vlight-split-button__control {
+  display: inline-flex;
+  height: var(--layout-control-height-medium);
+  align-items: stretch;
+  overflow: hidden;
+  border: var(--layout-stroke-width-1) solid var(--component-button-neutral-primary-border);
+  border-radius: var(--layout-radius-md);
+  color: inherit;
+  background: var(--component-button-neutral-primary-container);
+}
+
+.vlight-split-button[data-size="medium"] .vlight-split-button__control {
+  height: var(--layout-control-height-large);
+  font-size: var(--typography-font-size-16);
+  line-height: var(--typography-line-height-24);
+}
+
+.vlight-split-button[data-variant="secondary"] {
+  color: var(--component-button-neutral-secondary-content);
+}
+
+.vlight-split-button[data-variant="secondary"] .vlight-split-button__control {
+  border-color: var(--component-button-neutral-secondary-border);
+  background: var(--component-button-neutral-secondary-container);
+}
+
+.vlight-split-button__main,
+.vlight-split-button__trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--layout-spacing-2);
+  padding: var(--layout-padding-none);
+  border: 0;
+  color: inherit;
+  background: var(--color-base-transparent);
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.vlight-split-button__main {
+  padding-inline: var(--layout-padding-md);
+}
+
+.vlight-split-button__trigger {
+  width: var(--layout-control-height-small);
+  flex: 0 0 var(--layout-control-height-small);
+}
+
+.vlight-split-button[data-size="medium"] .vlight-split-button__trigger {
+  width: var(--layout-control-height-medium);
+  flex-basis: var(--layout-control-height-medium);
+}
+
+.vlight-split-button__main:hover:not(:disabled),
+.vlight-split-button__trigger:hover:not(:disabled) {
+  background: var(--component-button-state-inverse-filled-hover-layer);
+}
+
+.vlight-split-button[data-variant="secondary"] .vlight-split-button__main:hover:not(:disabled),
+.vlight-split-button[data-variant="secondary"] .vlight-split-button__trigger:hover:not(:disabled) {
+  background: var(--component-button-state-soft-filled-hover-layer);
+}
+
+.vlight-split-button__main:active:not(:disabled),
+.vlight-split-button__trigger:active:not(:disabled) {
+  background: var(--component-button-state-inverse-filled-pressed-layer);
+}
+
+.vlight-split-button[data-variant="secondary"] .vlight-split-button__main:active:not(:disabled),
+.vlight-split-button[data-variant="secondary"] .vlight-split-button__trigger:active:not(:disabled) {
+  background: var(--component-button-state-soft-filled-pressed-layer);
+}
+
+.vlight-split-button__main:focus-visible,
+.vlight-split-button__trigger:focus-visible {
+  z-index: 1;
+  outline: var(--layout-stroke-width-2) solid var(--component-button-state-focus-ring);
+  outline-offset: calc(var(--layout-stroke-width-2) * -1);
+}
+
+.vlight-split-button__main:disabled,
+.vlight-split-button__trigger:disabled {
+  color: var(--component-button-state-disabled-content);
+  cursor: not-allowed;
+}
+
+.vlight-split-button[data-loading] .vlight-split-button__main,
+.vlight-split-button[data-loading] .vlight-split-button__trigger {
+  cursor: wait;
+}
+
+.vlight-split-button:has(button:disabled) .vlight-split-button__control {
+  border-color: var(--component-button-state-disabled-filled-border);
+  color: var(--component-button-state-disabled-content);
+  background: var(--component-button-state-disabled-filled-container);
+}
+
+.vlight-split-button__divider {
+  width: var(--layout-stroke-width-1);
+  height: var(--layout-icon-size-20);
+  align-self: center;
+  flex: 0 0 var(--layout-stroke-width-1);
+  background: var(--color-semantic-border-inverse);
+}
+
+.vlight-split-button[data-variant="secondary"] .vlight-split-button__divider {
+  background: var(--color-semantic-border-default);
+}
+
+.vlight-split-button__icon {
+  display: inline-grid;
+  width: var(--layout-icon-size-16);
+  height: var(--layout-icon-size-16);
+  flex: 0 0 var(--layout-icon-size-16);
+  place-items: center;
+}
+
+.vlight-split-button[data-size="medium"] .vlight-split-button__icon {
+  width: var(--layout-icon-size-20);
+  height: var(--layout-icon-size-20);
+  flex-basis: var(--layout-icon-size-20);
+}
+
+.vlight-split-button__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.vlight-split-button__menu {
+  display: grid;
+  position: absolute;
+  top: calc(100% + var(--layout-spacing-2));
+  left: 0;
+  z-index: 20;
+  min-width: 100%;
+  padding: var(--layout-padding-xs);
+  border: var(--layout-stroke-width-1) solid var(--component-menu-surface-border);
+  border-radius: var(--layout-radius-md);
+  background: var(--component-menu-surface-container);
+  box-shadow: var(--effect-shadow-m);
+}
+
+.vlight-split-button__menu-item {
+  display: flex;
+  width: 100%;
+  min-height: var(--layout-control-height-small);
+  align-items: center;
+  gap: var(--layout-spacing-2);
+  padding: var(--layout-padding-sm) var(--layout-padding-md);
+  border: 0;
+  border-radius: var(--layout-radius-sm);
+  color: var(--component-menu-item-default-content);
+  background: var(--component-menu-item-default-container);
+  font: inherit;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.vlight-split-button__menu-item:hover,
+.vlight-split-button__menu-item:focus-visible {
+  color: var(--color-semantic-text-primary);
+  background: var(--component-menu-item-hover-container);
+  outline: none;
+}
+
+@keyframes vlight-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vlight-button,
+  .vlight-button__state-layer {
+    transition: none;
+  }
+
+  .vlight-button__spinner {
+    animation-duration: 1600ms;
+  }
+}

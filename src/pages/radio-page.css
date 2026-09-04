@@ -1,0 +1,193 @@
+.radio-page #when-to-use {
+  border-top: 0;
+}
+
+.radio-page #when-to-use .section-heading,
+.radio-page #when-to-use .radio-usage-list,
+.radio-page #props {
+  margin-inline: var(--layout-padding-3xl);
+}
+
+.radio-page #examples .section-heading,
+.radio-page #examples .radio-example-grid {
+  width: calc(100% - var(--layout-spacing-10));
+  max-width: var(--docs-component-rail-width);
+  margin-inline: auto;
+}
+
+.radio-when-heading {
+  margin-bottom: var(--layout-spacing-5);
+}
+
+.radio-usage-list {
+  display: grid;
+  gap: var(--layout-spacing-1);
+  max-width: var(--docs-content-width);
+  padding: var(--layout-padding-none);
+  list-style: none;
+}
+
+.radio-usage-list li {
+  color: var(--color-semantic-text-secondary);
+  font-size: var(--typography-font-size-14);
+  line-height: var(--typography-line-height-22);
+}
+
+.radio-usage-list strong {
+  color: var(--color-semantic-text-primary);
+  font-weight: var(--typography-font-weight-semibold);
+}
+
+.radio-examples-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--layout-spacing-4);
+  flex-wrap: wrap;
+}
+
+.radio-examples-heading > div {
+  display: grid;
+  gap: var(--layout-spacing-2);
+}
+
+.radio-example-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--layout-spacing-6);
+  align-items: stretch;
+}
+
+.radio-example-card {
+  display: grid;
+  min-width: 0;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  border: var(--layout-stroke-width-1) solid var(--color-semantic-border-subtle);
+  border-radius: var(--layout-radius-lg);
+  background: var(--color-semantic-background-surface);
+}
+
+.radio-example-card.is-wide {
+  grid-column: 1 / -1;
+}
+
+.radio-example-meta {
+  padding: var(--layout-padding-md) var(--layout-padding-base);
+  border-bottom: var(--layout-stroke-width-1) solid var(--color-semantic-border-divider);
+  background: var(--color-semantic-background-subtle);
+}
+
+.radio-example-meta h3 {
+  margin: var(--layout-spacing-0);
+  color: var(--color-semantic-text-primary);
+  font-family: var(--typography-font-family-display), sans-serif;
+  font-size: var(--typography-font-size-14);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: var(--typography-line-height-22);
+}
+
+.radio-example-preview {
+  display: grid;
+  min-width: 0;
+  min-height: calc(var(--layout-spacing-16) * 2);
+  align-content: center;
+  padding: var(--layout-padding-xl);
+}
+
+.radio-live-board {
+  width: min(100%, var(--docs-table-min-width));
+  justify-self: center;
+}
+
+.radio-comparison-board,
+.radio-state-board,
+.radio-tone-board,
+.radio-specimen {
+  display: grid;
+  min-width: 0;
+}
+
+.radio-comparison-board,
+.radio-state-board,
+.radio-tone-board {
+  gap: var(--layout-spacing-6);
+}
+
+.radio-box-board .vlight-radio-group {
+  width: 100%;
+}
+
+.radio-box-board .vlight-radio-field {
+  width: 100%;
+}
+
+.radio-specimen {
+  align-content: start;
+  gap: var(--layout-spacing-3);
+}
+
+.radio-specimen__content {
+  min-width: 0;
+}
+
+.radio-specimen__label {
+  color: var(--color-semantic-text-tertiary);
+  font-size: var(--typography-font-size-12);
+  font-weight: var(--typography-font-weight-semibold);
+  line-height: var(--typography-line-height-18);
+}
+
+.radio-props-table {
+  min-width: var(--docs-table-min-width);
+}
+
+.radio-props-table th:first-child,
+.radio-props-table td:first-child {
+  width: calc(var(--component-menu-content-width) / 1.5);
+}
+
+.radio-props-table code {
+  color: var(--color-semantic-text-primary);
+  font-weight: var(--typography-font-weight-medium);
+}
+
+.radio-props-notes {
+  display: grid;
+  gap: var(--layout-spacing-2);
+  margin-top: var(--layout-spacing-4);
+}
+
+.radio-props-notes p {
+  margin: var(--layout-spacing-0);
+  color: var(--color-semantic-text-tertiary);
+  font-size: var(--typography-font-size-12);
+  line-height: var(--typography-line-height-18);
+}
+
+@media (max-width: 72rem) {
+  .radio-example-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .radio-example-card.is-wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 49rem) {
+  .radio-page #when-to-use .section-heading,
+  .radio-page #when-to-use .radio-usage-list,
+  .radio-page #props {
+    margin-inline: var(--layout-padding-none);
+  }
+
+  .radio-page #examples .section-heading,
+  .radio-page #examples .radio-example-grid {
+    width: 100%;
+  }
+
+  .radio-example-preview {
+    padding: var(--layout-padding-lg);
+  }
+}

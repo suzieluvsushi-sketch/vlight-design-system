@@ -1,0 +1,97 @@
+.vlight-tabs {
+  min-width: 0;
+}
+
+.vlight-tabs__list {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: var(--layout-spacing-1);
+  overflow-x: auto;
+  padding: var(--layout-padding-xs);
+  border-radius: var(--layout-radius-md);
+  background: var(--component-tabs-container-background);
+  scrollbar-width: none;
+}
+
+.vlight-tabs__list::-webkit-scrollbar {
+  display: none;
+}
+
+.vlight-tabs__item {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: none;
+  height: var(--layout-control-height-small);
+  align-items: center;
+  justify-content: center;
+  gap: var(--layout-spacing-1);
+  padding: 0 var(--layout-padding-base);
+  border: 0;
+  border-radius: var(--layout-radius-sm);
+  background: transparent;
+  color: var(--component-tabs-item-default-content);
+  font-family: var(--typography-tabs-item-font-family);
+  font-size: var(--typography-tabs-item-font-size);
+  font-weight: var(--typography-tabs-item-font-weight);
+  line-height: var(--typography-tabs-item-line-height);
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  transition:
+    color 120ms ease,
+    background-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.vlight-tabs__item:hover:not([data-disabled]):not([data-active]) {
+  background: var(--component-tabs-item-hover-container);
+}
+
+.vlight-tabs__item:active:not([data-disabled]):not([data-active]) {
+  background: var(--component-tabs-item-pressed-container);
+  color: var(--component-tabs-item-pressed-content);
+}
+
+.vlight-tabs__item[data-active] {
+  background: var(--component-tabs-item-selected-container);
+  color: var(--component-tabs-item-selected-text);
+}
+
+.vlight-tabs__item[data-active] .vlight-tabs__icon {
+  color: var(--component-tabs-item-selected-icon);
+}
+
+.vlight-tabs__item:focus-visible {
+  background: var(--component-tabs-item-selected-container);
+  color: var(--component-tabs-item-selected-text);
+  box-shadow: inset 0 0 0 2px var(--component-tabs-item-focus-ring);
+}
+
+.vlight-tabs__item:focus-visible .vlight-tabs__icon {
+  color: var(--component-tabs-item-selected-icon);
+}
+
+.vlight-tabs__item[data-disabled] {
+  color: var(--component-tabs-item-disabled-content);
+  cursor: not-allowed;
+}
+
+.vlight-tabs__icon {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.vlight-tabs__icon > svg {
+  width: 20px;
+  height: 20px;
+}
+
+.vlight-tabs__panel {
+  outline: none;
+}

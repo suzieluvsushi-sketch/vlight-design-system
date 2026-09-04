@@ -1,0 +1,8 @@
+/*
+ * Tabler and Lucide outline icons use a 24 × 24 viewBox with a canonical
+ * 2-unit stroke. Keep that source stroke constant and let the SVG viewport
+ * scale it proportionally at 12 / 16 / 20 / 24 / 32px.
+ */
+svg:is(.tabler-icon, .lucide) {
+  stroke-width: var(--layout-stroke-width-2);
+}

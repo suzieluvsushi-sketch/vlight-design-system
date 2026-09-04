@@ -1,0 +1,45 @@
+.documentation-alert {
+  position: fixed;
+  right: var(--layout-spacing-6);
+  bottom: var(--layout-spacing-6);
+  z-index: 70;
+  width: min(var(--component-alert-default-width), calc(100vw - var(--layout-spacing-12)));
+  pointer-events: none;
+  animation: documentation-alert-lifecycle var(--documentation-alert-duration) ease both;
+}
+
+.documentation-alert .vlight-alert {
+  width: 100%;
+}
+
+@keyframes documentation-alert-lifecycle {
+  0% {
+    opacity: 0;
+    transform: translateY(var(--layout-spacing-2));
+  }
+
+  10%,
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(var(--layout-spacing-2));
+  }
+}
+
+@media (max-width: 49rem) {
+  .documentation-alert {
+    right: var(--layout-spacing-3);
+    bottom: var(--layout-spacing-3);
+    width: calc(100vw - var(--layout-spacing-6));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .documentation-alert {
+    animation: none;
+  }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Facebook">
+  <defs>
+    <mask id="facebook-f-cutout">
+      <rect width="24" height="24" fill="#fff"/>
+      <path fill="#000" d="M13.7 22v-9.1h3.1l.5-3.6h-3.6V7c0-1 .3-1.8 1.8-1.8h2V2c-.9-.1-2-.2-3-.2-3 0-5 1.8-5 5v2.5H6.2v3.6h3.3V22z"/>
+    </mask>
+  </defs>
+  <circle cx="12" cy="12" r="11" fill="#fff" mask="url(#facebook-f-cutout)"/>
+</svg>

@@ -1,0 +1,429 @@
+.vlight-user-message,
+.vlight-ai-message,
+.vlight-message-reasoning,
+.vlight-message-sources {
+  width: min(100%, var(--docs-wide-surface-width, 640px));
+  min-width: 0;
+}
+
+.vlight-user-message {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.vlight-user-message__content {
+  display: grid;
+  width: 80%;
+  min-width: 0;
+  justify-items: end;
+  gap: var(--layout-spacing-1);
+}
+
+.vlight-user-message__bubble {
+  width: 100%;
+  padding: var(--layout-padding-md) var(--layout-padding-base);
+  border-radius: var(--layout-radius-md);
+  color: var(--color-semantic-text-primary);
+  background: var(--color-semantic-background-surface);
+  font-size: var(--typography-font-size-14);
+  line-height: var(--typography-line-height-22);
+  overflow-wrap: anywhere;
+}
+
+.vlight-user-message.is-edit {
+  display: grid;
+  position: relative;
+  justify-content: stretch;
+  gap: var(--layout-spacing-3);
+  padding: var(--layout-padding-md);
+  border: var(--layout-stroke-width-1) solid var(--color-semantic-border-strong);
+  border-radius: var(--layout-radius-lg);
+  background: var(--color-semantic-background-surface);
+}
+
+.vlight-user-message.is-edit:has(.vlight-user-message__edit-hint.is-editor-hint) {
+  margin-bottom: calc(var(--layout-control-height-small) + var(--layout-spacing-3));
+}
+
+.vlight-user-message.is-edit:focus-within {
+  border-color: var(--color-semantic-border-focus);
+}
+
+.vlight-user-message__editor {
+  width: 100%;
+  min-height: var(--layout-control-height-extra-large);
+  padding: var(--layout-padding-none);
+  resize: none;
+  border: 0;
+  outline: 0;
+  color: var(--color-semantic-text-primary);
+  background: transparent;
+  font: inherit;
+  font-size: var(--typography-font-size-14);
+  line-height: var(--typography-line-height-20);
+}
+
+.vlight-user-message__edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--layout-spacing-2);
+}
+
+.vlight-message-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--layout-spacing-0);
+}
+
+.vlight-user-message.is-interactive .vlight-message-actions {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vlight-user-message.is-interactive:hover .vlight-message-actions,
+.vlight-user-message.is-interactive:focus-within .vlight-message-actions {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.vlight-user-message__edit-control {
+  display: inline-flex;
+  position: relative;
+}
+
+.vlight-user-message__edit-hint {
+  display: inline-flex;
+  position: absolute;
+  z-index: var(--docs-z-popover);
+  top: calc(100% + var(--layout-spacing-2));
+  right: 0;
+  width: max-content;
+  max-width: min(14rem, calc(100vw - var(--layout-spacing-8)));
+  align-items: center;
+  gap: var(--layout-spacing-2);
+  padding: var(--layout-padding-sm) var(--layout-padding-md);
+  border-radius: var(--layout-radius-sm);
+  color: var(--color-semantic-text-inverse);
+  background: var(--color-base-primary-500);
+  box-shadow: var(--effect-shadow-m);
+  font-size: var(--typography-font-size-12);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: var(--typography-line-height-16);
+  white-space: nowrap;
+}
+
+.vlight-user-message__edit-hint::after {
+  position: absolute;
+  right: calc(var(--layout-icon-size-16) / 2);
+  bottom: 100%;
+  width: 0;
+  height: 0;
+  border: var(--layout-spacing-1) solid transparent;
+  border-bottom-color: var(--color-base-primary-500);
+  content: "";
+}
+
+.vlight-user-message__edit-hint.is-editor-hint {
+  top: calc(100% + var(--layout-spacing-2));
+  right: 0;
+}
+
+.vlight-user-message__edit-hint.is-editor-hint::after {
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vlight-user-message__edit-hint-close {
+  display: grid;
+  width: var(--layout-icon-size-16);
+  height: var(--layout-icon-size-16);
+  flex: 0 0 var(--layout-icon-size-16);
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: var(--layout-radius-xs);
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.vlight-user-message__edit-hint-close:hover {
+  background: rgb(255 255 255 / 0.16);
+}
+
+.vlight-user-message__edit-hint-close:focus-visible {
+  outline: var(--layout-stroke-width-2) solid currentColor;
+  outline-offset: var(--layout-spacing-1);
+}
+
+.vlight-user-message__edit-hint-close svg {
+  width: var(--layout-icon-size-12);
+  height: var(--layout-icon-size-12);
+}
+
+.vlight-message-timestamp {
+  margin-inline-start: var(--layout-spacing-1);
+  color: var(--color-semantic-text-tertiary);
+  font-size: var(--typography-font-size-12);
+  line-height: var(--typography-line-height-16);
+  white-space: nowrap;
+}
+
+.vlight-ai-message {
+  display: grid;
+  justify-items: start;
+  gap: var(--layout-spacing-1);
+}
+
+.vlight-ai-message__content {
+  display: grid;
+  width: 100%;
+  gap: var(--layout-spacing-1);
+}
+
+.vlight-ai-message__response {
+  color: var(--color-semantic-text-primary);
+  font-size: var(--typography-font-size-14);
+  line-height: var(--typography-line-height-22);
+  overflow-wrap: anywhere;
+}
+
+.vlight-ai-message__stopped {
+  color: var(--color-semantic-text-tertiary);
+  font-size: var(--typography-font-size-12);
+  line-height: var(--typography-line-height-16);
+}
+
+.vlight-ai-message__error {
+  width: fit-content;
+  max-width: 100%;
+  padding: var(--layout-padding-sm) var(--layout-padding-md);
+  border-radius: var(--layout-radius-sm);
+  color: var(--color-semantic-danger-content);
+  background: var(--color-semantic-danger-background);
+  font-size: var(--typography-font-size-12);
+  line-height: var(--typography-line-height-18);
+}
+
+.vlight-message-reasoning {
+  display: grid;
+  gap: var(--layout-spacing-2);
+}
+
+.vlight-message-reasoning__trigger,
+.vlight-message-sources__trigger {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: var(--layout-spacing-2);
+  padding: var(--layout-padding-none);
+  border: 0;
+  border-radius: var(--layout-radius-xs);
+  color: var(--color-semantic-text-secondary);
+  background: transparent;
+  font-family: var(--typography-font-family-body), sans-serif;
+  font-size: var(--typography-font-size-12);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: var(--typography-line-height-18);
+  cursor: pointer;
+}
+
+.vlight-message-reasoning__trigger:hover,
+.vlight-message-sources__trigger:hover {
+  color: var(--color-semantic-text-primary);
+}
+
+.vlight-message-reasoning__trigger:focus-visible,
+.vlight-message-sources__trigger:focus-visible,
+.vlight-message-source:focus-visible,
+.vlight-inline-citation__trigger:focus-visible {
+  outline: var(--layout-stroke-width-2) solid var(--color-semantic-border-focus);
+  outline-offset: var(--layout-spacing-1);
+}
+
+.vlight-message-reasoning__trigger svg {
+  width: var(--layout-icon-size-16);
+  height: var(--layout-icon-size-16);
+  flex: 0 0 var(--layout-icon-size-16);
+}
+
+.vlight-message-reasoning p {
+  margin: var(--layout-spacing-0);
+  color: var(--color-semantic-text-secondary);
+  font-size: var(--typography-font-size-12);
+  line-height: var(--typography-line-height-18);
+}
+
+.vlight-message-status {
+  display: inline-flex;
+  min-height: var(--layout-spacing-5);
+  align-items: center;
+  gap: var(--layout-spacing-2);
+  color: var(--color-semantic-text-secondary);
+  font-size: var(--typography-font-size-12);
+  line-height: var(--typography-line-height-18);
+}
+
+.vlight-message-status svg {
+  width: var(--layout-icon-size-16);
+  height: var(--layout-icon-size-16);
+  flex: 0 0 var(--layout-icon-size-16);
+}
+
+.vlight-message-status__spinner {
+  animation: vlight-message-spin 760ms linear infinite;
+}
+
+.vlight-message-source {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  height: var(--layout-control-height-mini);
+  align-items: center;
+  gap: var(--layout-spacing-1);
+  padding-inline: var(--layout-padding-sm);
+  overflow: hidden;
+  border: var(--layout-stroke-width-1) solid var(--component-badge-neutral-border);
+  border-radius: var(--layout-radius-full);
+  color: var(--component-badge-neutral-content);
+  background: var(--color-semantic-background-surface);
+  font-family: var(--typography-font-family-body), sans-serif;
+  font-size: var(--typography-font-size-12);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: var(--typography-line-height-16);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: default;
+}
+
+button.vlight-message-source {
+  cursor: pointer;
+}
+
+.vlight-message-source:hover,
+.vlight-message-source.is-hover {
+  background: var(--component-badge-neutral-container);
+}
+
+.vlight-message-source.is-focus {
+  border-color: var(--color-semantic-border-focus);
+  box-shadow: 0 0 0 var(--layout-stroke-width-1) var(--color-semantic-border-focus);
+}
+
+.vlight-message-source svg,
+.vlight-message-source__favicon {
+  width: var(--layout-icon-size-12);
+  height: var(--layout-icon-size-12);
+  flex: 0 0 var(--layout-icon-size-12);
+}
+
+.vlight-message-source__favicon {
+  object-fit: cover;
+  border-radius: var(--layout-radius-xs);
+}
+
+.vlight-message-sources {
+  display: grid;
+  gap: var(--layout-spacing-2);
+}
+
+.vlight-message-sources__trigger {
+  gap: var(--layout-spacing-1);
+  color: var(--color-semantic-text-tertiary);
+}
+
+.vlight-message-sources__trigger svg {
+  width: var(--layout-icon-size-12);
+  height: var(--layout-icon-size-12);
+}
+
+.vlight-message-sources__list {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: var(--layout-spacing-1);
+}
+
+.vlight-inline-citation {
+  display: inline-flex;
+  position: relative;
+  vertical-align: text-top;
+}
+
+.vlight-inline-citation__trigger {
+  display: inline-grid;
+  width: var(--layout-icon-size-16);
+  height: var(--layout-icon-size-16);
+  padding: var(--layout-padding-none);
+  place-items: center;
+  border: var(--layout-stroke-width-1) solid transparent;
+  border-radius: var(--layout-radius-full);
+  color: var(--color-semantic-text-secondary);
+  background: var(--component-badge-neutral-container);
+  font-family: var(--typography-font-family-body), sans-serif;
+  font-size: calc(var(--typography-font-size-12) - var(--layout-stroke-width-2));
+  line-height: 1;
+  cursor: pointer;
+}
+
+.vlight-inline-citation__trigger:hover,
+.vlight-inline-citation__trigger.is-hover {
+  color: var(--color-semantic-text-inverse);
+  background: var(--color-semantic-background-inverse);
+}
+
+.vlight-inline-citation__trigger.is-focus {
+  border-color: var(--color-semantic-border-brand);
+  color: var(--color-semantic-text-brand);
+  background: var(--color-semantic-background-surface);
+}
+
+.vlight-inline-citation__preview {
+  display: grid;
+  position: absolute;
+  z-index: var(--docs-z-popover);
+  width: var(--component-menu-surface-width);
+  gap: var(--layout-spacing-2);
+  padding: var(--layout-padding-md);
+  border: var(--layout-stroke-width-1) solid var(--color-semantic-border-subtle);
+  border-radius: var(--layout-radius-lg);
+  color: var(--color-semantic-text-primary);
+  background: var(--color-semantic-background-surface);
+  box-shadow: var(--effect-shadow-m);
+  font-size: var(--typography-font-size-12);
+  line-height: var(--typography-line-height-18);
+  pointer-events: none;
+}
+
+.vlight-inline-citation__preview strong {
+  font-weight: var(--typography-font-weight-medium);
+}
+
+.vlight-inline-citation__preview > span:last-child {
+  color: var(--color-semantic-text-secondary);
+}
+
+@keyframes vlight-message-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 49rem) {
+  .vlight-user-message__content {
+    width: 100%;
+  }
+
+  .vlight-inline-citation__preview {
+    width: min(var(--component-menu-surface-width), calc(100vw - var(--layout-spacing-12)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vlight-message-status__spinner {
+    animation: none;
+  }
+}
