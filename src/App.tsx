@@ -299,7 +299,13 @@ function App() {
 
   return (
     <div className="docs-app">
-      <header className="docs-header">
+      <header
+        className="docs-header"
+        style={{
+          backdropFilter: 'blur(var(--layout-blur-background-sm))',
+          WebkitBackdropFilter: 'blur(var(--layout-blur-background-sm))',
+        }}
+      >
         <div className="docs-header-brand">
           <a
             className="brand-lockup"
