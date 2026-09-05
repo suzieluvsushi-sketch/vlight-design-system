@@ -413,7 +413,7 @@ function App() {
                                   />
                                   <img
                                     className="navigation-link__active-v"
-                                    src="./menu-assets/navigation-selected-v-v2.svg"
+                                    src="./menu-assets/navigation-selected-v-v3.svg"
                                     alt=""
                                   />
                                 </span>

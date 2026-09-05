@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:static-preview": "node scripts/build-static-preview.mjs",
+    "build:static-preview": "vite build --config vite.pages.config.ts --outDir static-preview",
     "lint": "oxlint",
     "preview": "vite preview",
     "history:validate": "node scripts/validate-history-log.mjs",

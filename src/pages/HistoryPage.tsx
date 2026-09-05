@@ -30,57 +30,6 @@ type HistoryEntry = {
   affectedAssets: string[]
 }
 
-const previewEntries: HistoryEntry[] = [
-  {
-    id: "2026-09-04-button-medium-height",
-    date: "2026-09-04",
-    object: { type: "component", id: "component.button", name: "Button / Medium" },
-    summary: "Adjusted the default control height and its token reference.",
-    reason: "Improve touch comfort and align medium controls across forms.",
-    changes: [
-      {
-        kind: "token-reference",
-        property: "Height",
-        before: { reference: "layout/control-height-medium", value: "36px" },
-        after: { reference: "layout/control-height-large", value: "40px" },
-      },
-    ],
-    affectedAssets: ["component.button"],
-  },
-  {
-    id: "2026-09-04-brand-token-alias",
-    date: "2026-09-04",
-    object: { type: "foundation", id: "foundation.color.semantic", name: "Color / Brand" },
-    summary: "Updated the Brand color alias while keeping the semantic name stable.",
-    reason: "Increase contrast in primary actions and selected states.",
-    changes: [
-      {
-        kind: "token-reference",
-        property: "Alias",
-        before: { reference: "color/base/primary/100", value: "Primary 100" },
-        after: { reference: "color/base/primary/200", value: "Primary 200" },
-      },
-    ],
-    affectedAssets: ["foundation.color.semantic"],
-  },
-  {
-    id: "2026-09-04-button-tertiary-added",
-    date: "2026-09-04",
-    object: { type: "component", id: "component.button", name: "Button / Tertiary" },
-    summary: "Added a reusable tertiary Button variant.",
-    reason: "Support low-emphasis actions without using a custom page-level style.",
-    changes: [
-      {
-        kind: "asset-added",
-        property: "Variant",
-        before: null,
-        after: { value: "Tertiary" },
-      },
-    ],
-    affectedAssets: ["component.button"],
-  },
-]
-
 const entryTypeLabel = {
   foundation: "Foundation",
   icon: "Icon",
@@ -96,9 +45,7 @@ const stateLabel = (state: ChangeState, fallback: string) => {
 const formatDate = (date: string) => date.replaceAll("-", "–")
 
 export function HistoryPage() {
-  const publishedEntries = historyLog.entries as HistoryEntry[]
-  const isPreview = publishedEntries.length === 0
-  const entries = isPreview ? previewEntries : publishedEntries.toReversed()
+  const entries = (historyLog.entries as HistoryEntry[]).toReversed()
 
   useEffect(() => {
     document.title = "History Log · VLight Design System"
@@ -123,7 +70,7 @@ export function HistoryPage() {
           <span>Reason</span>
           <span>Detail</span>
         </div>
-        <ol className="history-list" aria-label={isPreview ? "Preview history entries" : "History entries"}>
+        <ol className="history-list" aria-label="History entries">
           {entries.map((entry) => (
             <li className="history-entry" key={entry.id}>
               <time className="history-date" dateTime={entry.date}>{formatDate(entry.date)}</time>

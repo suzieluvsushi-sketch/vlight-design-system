@@ -1724,224 +1724,440 @@
           "tooltip",
           "number"
         ],
-        "runtimeStatus": "not-exported",
-        "runtimeNote": "The current CSS generator does not export composite text styles. Components should not assume text-style CSS variables exist unless the generator is extended.",
+        "runtimeStatus": "complete",
+        "runtimeNote": "Composite text styles are exported as font family, size, weight, and line-height CSS variables.",
         "tokens": [
           {
             "name": "display/hero",
             "subgroup": "display",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-display-hero-font-family",
+              "--typography-display-hero-font-size",
+              "--typography-display-hero-font-weight",
+              "--typography-display-hero-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "heading/page-med",
             "subgroup": "heading",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-heading-page-med-font-family",
+              "--typography-heading-page-med-font-size",
+              "--typography-heading-page-med-font-weight",
+              "--typography-heading-page-med-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "heading/page-semi",
             "subgroup": "heading",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-heading-page-semi-font-family",
+              "--typography-heading-page-semi-font-size",
+              "--typography-heading-page-semi-font-weight",
+              "--typography-heading-page-semi-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "heading/section-med",
             "subgroup": "heading",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-heading-section-med-font-family",
+              "--typography-heading-section-med-font-size",
+              "--typography-heading-section-med-font-weight",
+              "--typography-heading-section-med-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "heading/section-semi",
             "subgroup": "heading",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-heading-section-semi-font-family",
+              "--typography-heading-section-semi-font-size",
+              "--typography-heading-section-semi-font-weight",
+              "--typography-heading-section-semi-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "heading/subheading-med",
             "subgroup": "heading",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-heading-subheading-med-font-family",
+              "--typography-heading-subheading-med-font-size",
+              "--typography-heading-subheading-med-font-weight",
+              "--typography-heading-subheading-med-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "heading/subheading-semi",
             "subgroup": "heading",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-heading-subheading-semi-font-family",
+              "--typography-heading-subheading-semi-font-size",
+              "--typography-heading-subheading-semi-font-weight",
+              "--typography-heading-subheading-semi-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "heading/component-med",
             "subgroup": "heading",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-heading-component-med-font-family",
+              "--typography-heading-component-med-font-size",
+              "--typography-heading-component-med-font-weight",
+              "--typography-heading-component-med-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "heading/component-semi",
             "subgroup": "heading",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-heading-component-semi-font-family",
+              "--typography-heading-component-semi-font-size",
+              "--typography-heading-component-semi-font-weight",
+              "--typography-heading-component-semi-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "body/l-reg",
             "subgroup": "body",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-body-l-reg-font-family",
+              "--typography-body-l-reg-font-size",
+              "--typography-body-l-reg-font-weight",
+              "--typography-body-l-reg-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "body/l-med",
             "subgroup": "body",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-body-l-med-font-family",
+              "--typography-body-l-med-font-size",
+              "--typography-body-l-med-font-weight",
+              "--typography-body-l-med-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "body/m-reg",
             "subgroup": "body",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-body-m-reg-font-family",
+              "--typography-body-m-reg-font-size",
+              "--typography-body-m-reg-font-weight",
+              "--typography-body-m-reg-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "body/m-med",
             "subgroup": "body",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-body-m-med-font-family",
+              "--typography-body-m-med-font-size",
+              "--typography-body-m-med-font-weight",
+              "--typography-body-m-med-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "body/s-reg",
             "subgroup": "body",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-body-s-reg-font-family",
+              "--typography-body-s-reg-font-size",
+              "--typography-body-s-reg-font-weight",
+              "--typography-body-s-reg-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "body/s-med",
             "subgroup": "body",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-body-s-med-font-family",
+              "--typography-body-s-med-font-size",
+              "--typography-body-s-med-font-weight",
+              "--typography-body-s-med-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "caption/reg",
             "subgroup": "caption",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-caption-reg-font-family",
+              "--typography-caption-reg-font-size",
+              "--typography-caption-reg-font-weight",
+              "--typography-caption-reg-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "caption/med",
             "subgroup": "caption",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-caption-med-font-family",
+              "--typography-caption-med-font-size",
+              "--typography-caption-med-font-weight",
+              "--typography-caption-med-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "button/l",
             "subgroup": "button",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-button-l-font-family",
+              "--typography-button-l-font-size",
+              "--typography-button-l-font-weight",
+              "--typography-button-l-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "button/m",
             "subgroup": "button",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-button-m-font-family",
+              "--typography-button-m-font-size",
+              "--typography-button-m-font-weight",
+              "--typography-button-m-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "button/s",
             "subgroup": "button",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-button-s-font-family",
+              "--typography-button-s-font-size",
+              "--typography-button-s-font-weight",
+              "--typography-button-s-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "tabs/item",
             "subgroup": "tabs",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-tabs-item-font-family",
+              "--typography-tabs-item-font-size",
+              "--typography-tabs-item-font-weight",
+              "--typography-tabs-item-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "input/text",
             "subgroup": "input",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-input-text-font-family",
+              "--typography-input-text-font-size",
+              "--typography-input-text-font-weight",
+              "--typography-input-text-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "input/helper",
             "subgroup": "input",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-input-helper-font-family",
+              "--typography-input-helper-font-size",
+              "--typography-input-helper-font-weight",
+              "--typography-input-helper-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "badge/label",
             "subgroup": "badge",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-badge-label-font-family",
+              "--typography-badge-label-font-size",
+              "--typography-badge-label-font-weight",
+              "--typography-badge-label-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "tooltip/reg",
             "subgroup": "tooltip",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-tooltip-reg-font-family",
+              "--typography-tooltip-reg-font-size",
+              "--typography-tooltip-reg-font-weight",
+              "--typography-tooltip-reg-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "tooltip/med",
             "subgroup": "tooltip",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-tooltip-med-font-family",
+              "--typography-tooltip-med-font-size",
+              "--typography-tooltip-med-font-weight",
+              "--typography-tooltip-med-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "number/xl-med",
             "subgroup": "number",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-number-xl-med-font-family",
+              "--typography-number-xl-med-font-size",
+              "--typography-number-xl-med-font-weight",
+              "--typography-number-xl-med-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "number/xl-reg",
             "subgroup": "number",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-number-xl-reg-font-family",
+              "--typography-number-xl-reg-font-size",
+              "--typography-number-xl-reg-font-weight",
+              "--typography-number-xl-reg-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "number/l-med",
             "subgroup": "number",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-number-l-med-font-family",
+              "--typography-number-l-med-font-size",
+              "--typography-number-l-med-font-weight",
+              "--typography-number-l-med-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "number/l-reg",
             "subgroup": "number",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-number-l-reg-font-family",
+              "--typography-number-l-reg-font-size",
+              "--typography-number-l-reg-font-weight",
+              "--typography-number-l-reg-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "number/m-reg",
             "subgroup": "number",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-number-m-reg-font-family",
+              "--typography-number-m-reg-font-size",
+              "--typography-number-m-reg-font-weight",
+              "--typography-number-m-reg-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "number/m-med",
             "subgroup": "number",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-number-m-med-font-family",
+              "--typography-number-m-med-font-size",
+              "--typography-number-m-med-font-weight",
+              "--typography-number-m-med-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "number/s-reg",
             "subgroup": "number",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-number-s-reg-font-family",
+              "--typography-number-s-reg-font-size",
+              "--typography-number-s-reg-font-weight",
+              "--typography-number-s-reg-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "number/s-med",
             "subgroup": "number",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-number-s-med-font-family",
+              "--typography-number-s-med-font-size",
+              "--typography-number-s-med-font-weight",
+              "--typography-number-s-med-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "display/hero-l",
             "subgroup": "display",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-display-hero-l-font-family",
+              "--typography-display-hero-l-font-size",
+              "--typography-display-hero-l-font-weight",
+              "--typography-display-hero-l-line-height"
+            ],
+            "runtimeStatus": "available"
           },
           {
             "name": "display/hero-xl",
             "subgroup": "display",
             "type": "typography-style",
-            "runtimeStatus": "not-exported"
+            "cssVariables": [
+              "--typography-display-hero-xl-font-family",
+              "--typography-display-hero-xl-font-size",
+              "--typography-display-hero-xl-font-weight",
+              "--typography-display-hero-xl-line-height"
+            ],
+            "runtimeStatus": "available"
           }
         ]
       },
@@ -10498,16 +10714,24 @@
           "foundationId": "foundation.layout",
           "tokens": [
             {
-              "name": "control-height/small",
-              "cssVariable": "--layout-control-height-small"
+              "name": "control-height/medium",
+              "cssVariable": "--layout-control-height-medium"
+            },
+            {
+              "name": "icon-size/20",
+              "cssVariable": "--layout-icon-size-20"
             },
             {
               "name": "padding/base",
               "cssVariable": "--layout-padding-base"
             },
             {
-              "name": "padding/xs",
-              "cssVariable": "--layout-padding-xs"
+              "name": "padding/none",
+              "cssVariable": "--layout-padding-none"
+            },
+            {
+              "name": "padding/sm",
+              "cssVariable": "--layout-padding-sm"
             },
             {
               "name": "radius/md",
@@ -10534,7 +10758,7 @@
                 "--typography-tabs-item-font-weight",
                 "--typography-tabs-item-line-height"
               ],
-              "runtimeStatus": "missing-from-globals.css"
+              "runtimeStatus": "available"
             }
           ]
         }

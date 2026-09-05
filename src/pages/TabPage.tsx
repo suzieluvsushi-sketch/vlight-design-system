@@ -82,7 +82,7 @@ const guidelines = [
   },
   {
     title: "Keep one item selected",
-    body: "Always provide a selected tab and preserve it while content is loading.",
+    body: "Always provide a selected tab and preserve it while content is loading. Do not override the component's internal color, spacing, or icon tokens.",
   },
 ]
 
@@ -118,7 +118,8 @@ export function TabPage() {
           <h2 id="tab-usage-title">When to use</h2>
           <p>
             Use two to five tabs for peer sections. Do not use them for sequential steps,
-            primary page navigation, or choices that immediately submit a value.
+            primary page navigation, or choices that immediately submit a value. Preserve
+            the contained 36px control height and tokenized spacing in every context.
           </p>
         </div>
       </section>

@@ -107,11 +107,6 @@ const TokenCard = ({ token, onCopy }: { token: ColorToken; onCopy: (value: strin
         <code>{token.resolvedHex}</code>
         {token.source ? <small>{token.source}</small> : null}
       </span>
-      {token.source ? (
-        <span className="token-tooltip" role="tooltip">
-          References {token.source}. {token.description}
-        </span>
-      ) : null}
     </button>
   )
 }

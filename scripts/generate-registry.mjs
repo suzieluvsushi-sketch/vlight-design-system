@@ -123,12 +123,27 @@ const foundationCollections = collectionDefinitions.map((definition) => {
   }
 })
 
-const textStyles = tokenSource.styles.text.map((style) => ({
-  name: style.name,
-  subgroup: style.name.split("/")[0],
-  type: "typography-style",
-  runtimeStatus: "not-exported",
-}))
+const textStyleVariableLookup = new Map()
+const textStyles = tokenSource.styles.text.map((style) => {
+  const prefix = `--typography-${slug(style.name)}`
+  const cssVariables = ["font-family", "font-size", "font-weight", "line-height"].map(
+    (property) => `${prefix}-${property}`,
+  )
+
+  cssVariables.forEach((cssVariable) => {
+    textStyleVariableLookup.set(cssVariable, style.name)
+  })
+
+  return {
+    name: style.name,
+    subgroup: style.name.split("/")[0],
+    type: "typography-style",
+    cssVariables,
+    runtimeStatus: cssVariables.every((cssVariable) => cssVariableDefinitions.has(cssVariable))
+      ? "available"
+      : "missing",
+  }
+})
 
 const textStyleEntry = {
   id: "foundation.typography.text-styles",
@@ -142,8 +157,10 @@ const textStyleEntry = {
   editAt: tokenSourcePath,
   tokenCount: textStyles.length,
   subgroups: unique(textStyles.map((style) => style.subgroup)),
-  runtimeStatus: "not-exported",
-  runtimeNote: "The current CSS generator does not export composite text styles. Components should not assume text-style CSS variables exist unless the generator is extended.",
+  runtimeStatus: textStyles.every((style) => style.runtimeStatus === "available")
+    ? "complete"
+    : "incomplete",
+  runtimeNote: "Composite text styles are exported as font family, size, weight, and line-height CSS variables.",
   tokens: textStyles,
 }
 
@@ -412,7 +429,7 @@ for (const definition of componentModules) {
   const nonFoundationDependencies = []
   const platformRuntimeVariables = []
   const unresolvedCssVariables = []
-  const missingTextStyleVariables = []
+  const textStyleDependencies = new Map()
 
   for (const cssVariable of cssVariables) {
     const foundationToken = foundationVariableLookup.get(cssVariable)
@@ -434,8 +451,11 @@ for (const definition of componentModules) {
       })
     } else if (runtimeProvidedVariables.has(cssVariable)) {
       platformRuntimeVariables.push(cssVariable)
-    } else if (cssVariable.startsWith("--typography-tabs-item-")) {
-      missingTextStyleVariables.push(cssVariable)
+    } else if (textStyleVariableLookup.has(cssVariable)) {
+      const styleName = textStyleVariableLookup.get(cssVariable)
+      const current = textStyleDependencies.get(styleName) ?? []
+      current.push(cssVariable)
+      textStyleDependencies.set(styleName, current)
     } else {
       unresolvedCssVariables.push(cssVariable)
     }
@@ -448,16 +468,16 @@ for (const definition of componentModules) {
     }))
     .sort((a, b) => a.foundationId.localeCompare(b.foundationId))
 
-  if (missingTextStyleVariables.length > 0) {
+  if (textStyleDependencies.size > 0) {
     foundationDependencies.push({
       foundationId: "foundation.typography.text-styles",
-      tokens: [
-        {
-          name: "tabs/item",
-          cssVariables: missingTextStyleVariables,
-          runtimeStatus: "missing-from-globals.css",
-        },
-      ],
+      tokens: [...textStyleDependencies.entries()].map(([name, cssVariables]) => ({
+        name,
+        cssVariables: cssVariables.sort(),
+        runtimeStatus: cssVariables.every((cssVariable) => cssVariableDefinitions.has(cssVariable))
+          ? "available"
+          : "missing",
+      })),
     })
   }
 

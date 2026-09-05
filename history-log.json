@@ -92,6 +92,83 @@
       "affectedAssets": [
         "foundation.component-tokens"
       ]
+    },
+    {
+      "id": "2026-09-05-tabs-new-style-token-remap",
+      "date": "2026-09-05",
+      "object": {
+        "type": "component",
+        "id": "component.tabs",
+        "name": "Tabs"
+      },
+      "summary": "Updated the Tabs component canvas, web implementation, tokens, and guidance to the new token-bound color and sizing specification.",
+      "reason": "Apply the supplied new Tabs style because its color usage and dimensions changed, while keeping images, text, and component styling bound to existing tokens.",
+      "changes": [
+        {
+          "kind": "token-reference",
+          "property": "Tabs container background",
+          "before": {
+            "reference": "Color Semantic/background/muted",
+            "value": "#EFF0F5"
+          },
+          "after": {
+            "reference": "Color Semantic/background/surface",
+            "value": "#FFFFFF"
+          }
+        },
+        {
+          "kind": "token-reference",
+          "property": "Selected tab container",
+          "before": {
+            "reference": "Color Semantic/background/surface",
+            "value": "#FFFFFF"
+          },
+          "after": {
+            "reference": "Color Semantic/background/muted",
+            "value": "#EFF0F5"
+          }
+        },
+        {
+          "kind": "dimension",
+          "property": "Tab item height",
+          "before": {
+            "reference": "control-height/small",
+            "value": "32px"
+          },
+          "after": {
+            "reference": "control-height/medium",
+            "value": "36px"
+          }
+        },
+        {
+          "kind": "dimension",
+          "property": "Tab item vertical padding",
+          "before": {
+            "reference": "padding/none",
+            "value": "0px"
+          },
+          "after": {
+            "reference": "padding/sm",
+            "value": "8px"
+          }
+        },
+        {
+          "kind": "dimension",
+          "property": "Tabs list padding",
+          "before": {
+            "reference": "padding/xs",
+            "value": "4px"
+          },
+          "after": {
+            "reference": "padding/none",
+            "value": "0px"
+          }
+        }
+      ],
+      "affectedAssets": [
+        "component.tabs",
+        "foundation.component-tokens"
+      ]
     }
   ]
 }

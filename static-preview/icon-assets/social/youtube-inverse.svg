@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="YouTube">
-  <defs>
-    <mask id="youtube-play-cutout">
-      <rect width="24" height="24" fill="#fff"/>
-      <path fill="#000" d="m10 8 6 4-6 4z"/>
-    </mask>
-  </defs>
-  <rect x="1" y="4" width="22" height="16" rx="5" fill="#fff" mask="url(#youtube-play-cutout)"/>
-</svg>

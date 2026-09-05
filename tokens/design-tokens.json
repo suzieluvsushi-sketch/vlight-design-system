@@ -10756,13 +10756,13 @@
             "Value": {
               "modeId": "291:0",
               "value": {
-                "$alias": "Color Semantic/background/muted",
+                "$alias": "Color Semantic/background/surface",
                 "$target": {
-                  "id": "VariableID:48:20",
-                  "key": "34578902134f619e10073fc462ed085a6b6580e3",
+                  "id": "VariableID:48:18",
+                  "key": "b670ece2a3c8bdd78edf099b6ca3ab71fc9c14a5",
                   "collectionId": "VariableCollectionId:10:3",
                   "collection": "Color Semantic",
-                  "name": "background/muted"
+                  "name": "background/surface"
                 }
               }
             }
@@ -10968,13 +10968,13 @@
             "Value": {
               "modeId": "291:0",
               "value": {
-                "$alias": "Color Semantic/background/surface",
+                "$alias": "Color Semantic/background/muted",
                 "$target": {
-                  "id": "VariableID:48:18",
-                  "key": "b670ece2a3c8bdd78edf099b6ca3ab71fc9c14a5",
+                  "id": "VariableID:48:20",
+                  "key": "34578902134f619e10073fc462ed085a6b6580e3",
                   "collectionId": "VariableCollectionId:10:3",
                   "collection": "Color Semantic",
-                  "name": "background/surface"
+                  "name": "background/muted"
                 }
               }
             }
@@ -16802,13 +16802,13 @@
     {
       "from": "Component/tabs/container/background",
       "mode": "Value",
-      "to": "Color Semantic/background/muted",
+      "to": "Color Semantic/background/surface",
       "target": {
-        "id": "VariableID:48:20",
-        "key": "34578902134f619e10073fc462ed085a6b6580e3",
+        "id": "VariableID:48:18",
+        "key": "b670ece2a3c8bdd78edf099b6ca3ab71fc9c14a5",
         "collectionId": "VariableCollectionId:10:3",
         "collection": "Color Semantic",
-        "name": "background/muted"
+        "name": "background/surface"
       }
     },
     {
@@ -16862,13 +16862,13 @@
     {
       "from": "Component/tabs/item/selected/container",
       "mode": "Value",
-      "to": "Color Semantic/background/surface",
+      "to": "Color Semantic/background/muted",
       "target": {
-        "id": "VariableID:48:18",
-        "key": "b670ece2a3c8bdd78edf099b6ca3ab71fc9c14a5",
+        "id": "VariableID:48:20",
+        "key": "34578902134f619e10073fc462ed085a6b6580e3",
         "collectionId": "VariableCollectionId:10:3",
         "collection": "Color Semantic",
-        "name": "background/surface"
+        "name": "background/muted"
       }
     },
     {

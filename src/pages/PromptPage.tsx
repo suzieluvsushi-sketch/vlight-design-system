@@ -18,11 +18,6 @@ const initialAttachments: PromptAttachmentItem[] = [
   { id: "chart", name: "Revenue-chart.png", type: "image" },
 ]
 
-const uploadSamples = [
-  { name: "Research-notes.txt", type: "file" as const },
-  { name: "Dashboard-preview.png", type: "image" as const },
-]
-
 const promptPropsRows = [
   ["PromptComposer.value / defaultValue", "string"],
   ["PromptComposer.attachments", "PromptAttachmentItem[] · up to 4"],
@@ -108,17 +103,6 @@ export function PromptPage() {
     setStatus(`${additions.length} attachment${additions.length === 1 ? "" : "s"} added.`)
   }
 
-  const addSampleAttachment = () => {
-    if (attachments.length >= 4) return
-    const sample = uploadSamples[attachments.length % uploadSamples.length]
-    const nextAttachment = {
-      id: `sample-${attachments.length}-${sample.name}`,
-      ...sample,
-    }
-    setAttachments((current) => [...current, nextAttachment].slice(0, 4))
-    setStatus(`${sample.name} added.`)
-  }
-
   const submitMessage = (submittedMessage: string) => {
     setRunning(true)
     setMessage("")
@@ -191,7 +175,6 @@ export function PromptPage() {
                 onValueChange={setMessage}
                 onSubmit={submitMessage}
                 onStop={stopResponse}
-                onUpload={addSampleAttachment}
                 onFilesSelected={addDemoAttachments}
                 attachments={attachments}
                 onRemoveAttachment={removeAttachment}

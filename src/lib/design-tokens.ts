@@ -158,10 +158,13 @@ export const colorTokensFor = (collectionName: "Color Base" | "Color Semantic"):
   })
 }
 
-const boundVariable = (style: TextStyle, property: string) => {
+const boundVariable = (style: TextStyle, property: string, fallback?: string) => {
   const binding = style.boundVariables[property]
 
-  if (!binding) throw new Error(`Missing ${property} binding for text style: ${style.name}`)
+  if (!binding) {
+    if (fallback !== undefined) return fallback
+    throw new Error(`Missing ${property} binding for text style: ${style.name}`)
+  }
 
   return `var(${cssVariableFor(binding.$target.collection, binding.$target.name)})`
 }
@@ -198,7 +201,7 @@ export const typographyTextStyles = (): TypographyStyleToken[] =>
         fontFamily: boundVariable(style, "fontFamily"),
         fontSize: boundVariable(style, "fontSize"),
         fontWeight: boundVariable(style, "fontWeight"),
-        lineHeight: boundVariable(style, "lineHeight"),
+        lineHeight: boundVariable(style, "lineHeight", `${style.value.lineHeight.value}px`),
         letterSpacing: tracking === 0 ? "0" : `${tracking / 100}em`,
       },
     }
