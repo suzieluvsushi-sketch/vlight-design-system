@@ -313,7 +313,10 @@ function App() {
             aria-label="VLight Design System home"
             onClick={(event) => transitionToPage(event, "color", "?page=color")}
           >
-            <img className="brand-logo" src="./vlight-logo-frame.png" alt="VLight" />
+            <picture>
+              <source media="(max-width: 549px)" srcSet="./vlight-logo-mark@3x.png" />
+              <img className="brand-logo" src="./vlight-logo-frame.png" alt="VLight" />
+            </picture>
           </a>
           <nav className="docs-top-navigation" aria-label="Documentation views">
             <a
@@ -407,13 +410,7 @@ function App() {
                               {isActive ? (
                                 <span className="navigation-link__active-art" aria-hidden="true">
                                   <img
-                                    className="navigation-link__active-character"
-                                    src="./menu-assets/navigation-selected-character-v3.png"
-                                    alt=""
-                                  />
-                                  <img
-                                    className="navigation-link__active-v"
-                                    src="./menu-assets/navigation-selected-v-v3.svg"
+                                    src="./menu-assets/navigation-selected-art-v4@3x.png"
                                     alt=""
                                   />
                                 </span>

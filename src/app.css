@@ -215,8 +215,13 @@
 .brand-lockup {
   display: inline-flex;
   width: fit-content;
+  flex: 0 0 auto;
   align-items: center;
   text-decoration: none;
+}
+
+.brand-lockup picture {
+  display: block;
 }
 
 .navigation-empty {
@@ -230,6 +235,19 @@
   display: block;
   height: calc(var(--layout-icon-size-24) + var(--layout-spacing-1));
   width: auto;
+}
+
+@media (max-width: 34.3125rem) {
+  .brand-logo {
+    height: 35px;
+  }
+}
+
+@media (max-width: 34.375rem) {
+  .docs-top-navigation {
+    gap: var(--layout-spacing-0);
+    margin-left: var(--layout-spacing-2);
+  }
 }
 
 .docs-navigation,
@@ -338,31 +356,11 @@
 }
 
 .navigation-link__active-art img {
-  position: absolute;
-  max-width: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
   pointer-events: none;
-}
-
-.navigation-link__active-character {
-  top: 0.355px;
-  left: 0.983px;
-  width: 63.901px;
-  height: 63.901px;
-  filter:
-    drop-shadow(0.959px 0 0.959px var(--color-base-primary-100))
-    drop-shadow(-0.959px 0 0.959px var(--color-base-primary-50))
-    drop-shadow(0 0.959px 0.959px var(--color-base-primary-50))
-    drop-shadow(0 -0.959px 0.959px var(--color-base-primary-50));
-  transform: rotate(2deg);
-}
-
-.navigation-link__active-v {
-  top: 39.529px;
-  left: 29.942px;
-  width: 5.431px;
-  height: 5.112px;
-  mix-blend-mode: overlay;
-  transform: rotate(4.59deg);
 }
 
 .navigation-empty {
@@ -1067,7 +1065,7 @@
 }
 
 .icon-style-board.is-filled .icon-library-item {
-  color: var(--color-semantic-icon-muted);
+  color: var(--color-semantic-icon-secondary);
 }
 
 .icon-library-item:focus-visible {
@@ -1946,10 +1944,6 @@
 
   .docs-token-download .vlight-button__label {
     display: none;
-  }
-
-  .docs-top-navigation {
-    margin-left: var(--layout-spacing-2);
   }
 
   .docs-token-download {
