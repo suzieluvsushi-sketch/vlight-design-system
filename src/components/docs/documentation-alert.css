@@ -8,7 +8,7 @@
   animation: documentation-alert-lifecycle var(--documentation-alert-duration) ease both;
 }
 
-.documentation-alert .vlight-alert {
+.documentation-alert-instance {
   width: 100%;
 }
 

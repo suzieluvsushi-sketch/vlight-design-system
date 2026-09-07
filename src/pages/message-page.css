@@ -53,7 +53,7 @@
   display: grid;
   min-width: 0;
   align-content: center;
-  padding: var(--layout-padding-xl);
+  padding: var(--layout-padding-lg) var(--layout-padding-xl);
 }
 
 .message-source-stack,
@@ -74,8 +74,7 @@
   background: var(--color-semantic-background-subtle);
 }
 
-.message-conversation-example > .vlight-user-message,
-.message-conversation-example > .vlight-ai-message {
+.message-conversation-instance {
   margin-inline: auto;
 }
 
@@ -169,7 +168,7 @@
   }
 
   .message-example-preview {
-    padding: var(--layout-padding-lg);
+    padding: var(--layout-padding-base) var(--layout-padding-lg);
   }
 
   .message-source-stack.is-subtle {

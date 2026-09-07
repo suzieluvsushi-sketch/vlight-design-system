@@ -11,8 +11,8 @@
       "fileKey": "epVp2qfvxyEW4R3txpncSJ"
     },
     "tokenMachineSource": "tokens/design-tokens.json",
-    "tokenRuntimeArtifact": "src/globals.css",
-    "tokenRuntimeGeneratedBy": "scripts/generate-globals-css.mjs",
+    "tokenRuntimeArtifact": "src/tokens.css",
+    "tokenRuntimeGeneratedBy": "scripts/generate-tokens-css.mjs",
     "conflictRule": "The reviewed published website defines the accepted experience. Token values are edited in the authoring source and synchronized through design-tokens.json; generated CSS must not be edited directly."
   },
   "scope": {
@@ -48,100 +48,8 @@
   },
   "foundation": {
     "sourceOfTruth": "tokens/design-tokens.json",
-    "runtimeArtifact": "src/globals.css",
+    "runtimeArtifact": "src/tokens.css",
     "runtimeArtifactGenerated": true,
-    "runtimeAdapters": [
-      {
-        "id": "foundation.adapter.shadcn-semantic",
-        "name": "shadcn semantic adapter",
-        "filePath": "src/globals.css",
-        "generatedBy": "scripts/generate-globals-css.mjs",
-        "aliases": [
-          "--background",
-          "--foreground",
-          "--card",
-          "--card-foreground",
-          "--popover",
-          "--popover-foreground",
-          "--primary",
-          "--primary-foreground",
-          "--secondary",
-          "--secondary-foreground",
-          "--muted",
-          "--muted-foreground",
-          "--accent",
-          "--accent-foreground",
-          "--destructive",
-          "--destructive-foreground",
-          "--border",
-          "--input",
-          "--ring",
-          "--chart-1",
-          "--chart-2",
-          "--chart-3",
-          "--chart-4",
-          "--chart-5",
-          "--sidebar",
-          "--sidebar-foreground",
-          "--sidebar-primary",
-          "--sidebar-primary-foreground",
-          "--sidebar-accent",
-          "--sidebar-accent-foreground",
-          "--sidebar-border",
-          "--sidebar-ring",
-          "--radius"
-        ]
-      },
-      {
-        "id": "foundation.adapter.tailwind-theme",
-        "name": "Tailwind theme adapter",
-        "filePath": "src/globals.css",
-        "generatedBy": "scripts/generate-globals-css.mjs",
-        "aliases": [
-          "--font-sans",
-          "--font-heading",
-          "--color-background",
-          "--color-foreground",
-          "--color-card",
-          "--color-card-foreground",
-          "--color-popover",
-          "--color-popover-foreground",
-          "--color-primary",
-          "--color-primary-foreground",
-          "--color-secondary",
-          "--color-secondary-foreground",
-          "--color-muted",
-          "--color-muted-foreground",
-          "--color-accent",
-          "--color-accent-foreground",
-          "--color-destructive",
-          "--color-destructive-foreground",
-          "--color-border",
-          "--color-input",
-          "--color-ring",
-          "--color-chart-1",
-          "--color-chart-2",
-          "--color-chart-3",
-          "--color-chart-4",
-          "--color-chart-5",
-          "--color-sidebar",
-          "--color-sidebar-foreground",
-          "--color-sidebar-primary",
-          "--color-sidebar-primary-foreground",
-          "--color-sidebar-accent",
-          "--color-sidebar-accent-foreground",
-          "--color-sidebar-border",
-          "--color-sidebar-ring",
-          "--radius-sm",
-          "--radius-md",
-          "--radius-lg",
-          "--radius-xl",
-          "--radius-2xl",
-          "--radius-3xl",
-          "--radius-4xl"
-        ]
-      }
-    ],
     "entries": [
       {
         "id": "foundation.color.base",
@@ -150,8 +58,8 @@
         "role": "Primitive color palette",
         "sourcePath": "tokens/design-tokens.json",
         "sourceSelector": "collections[name=\"Color Base\"]",
-        "runtimePath": "src/globals.css",
-        "runtimeGeneratedBy": "scripts/generate-globals-css.mjs",
+        "runtimePath": "src/tokens.css",
+        "runtimeGeneratedBy": "scripts/generate-tokens-css.mjs",
         "editAt": "tokens/design-tokens.json",
         "tokenCount": 67,
         "subgroups": [
@@ -847,8 +755,8 @@
         "role": "Semantic color roles consumed by product UI",
         "sourcePath": "tokens/design-tokens.json",
         "sourceSelector": "collections[name=\"Color Semantic\"]",
-        "runtimePath": "src/globals.css",
-        "runtimeGeneratedBy": "scripts/generate-globals-css.mjs",
+        "runtimePath": "src/tokens.css",
+        "runtimeGeneratedBy": "scripts/generate-tokens-css.mjs",
         "editAt": "tokens/design-tokens.json",
         "tokenCount": 56,
         "subgroups": [
@@ -1436,8 +1344,8 @@
         "role": "Font family, weight, size, and line-height primitives",
         "sourcePath": "tokens/design-tokens.json",
         "sourceSelector": "collections[name=\"Typography\"]",
-        "runtimePath": "src/globals.css",
-        "runtimeGeneratedBy": "scripts/generate-globals-css.mjs",
+        "runtimePath": "src/tokens.css",
+        "runtimeGeneratedBy": "scripts/generate-tokens-css.mjs",
         "editAt": "tokens/design-tokens.json",
         "tokenCount": 25,
         "subgroups": [
@@ -1708,8 +1616,8 @@
         "role": "Composite Figma text styles",
         "sourcePath": "tokens/design-tokens.json",
         "sourceSelector": "styles.text",
-        "runtimePath": "src/globals.css",
-        "runtimeGeneratedBy": "scripts/generate-globals-css.mjs",
+        "runtimePath": "src/tokens.css",
+        "runtimeGeneratedBy": "scripts/generate-tokens-css.mjs",
         "editAt": "tokens/design-tokens.json",
         "tokenCount": 36,
         "subgroups": [
@@ -2168,8 +2076,8 @@
         "role": "Radius, spacing, padding, blur, control height, icon size, and stroke width",
         "sourcePath": "tokens/design-tokens.json",
         "sourceSelector": "collections[name=\"Layout\"]",
-        "runtimePath": "src/globals.css",
-        "runtimeGeneratedBy": "scripts/generate-globals-css.mjs",
+        "runtimePath": "src/tokens.css",
+        "runtimeGeneratedBy": "scripts/generate-tokens-css.mjs",
         "editAt": "tokens/design-tokens.json",
         "tokenCount": 48,
         "subgroups": [
@@ -2673,8 +2581,8 @@
         "role": "Figma shadows, background blurs, and modal overlay effects",
         "sourcePath": "tokens/design-tokens.json",
         "sourceSelector": "styles.effect",
-        "runtimePath": "src/globals.css",
-        "runtimeGeneratedBy": "scripts/generate-globals-css.mjs",
+        "runtimePath": "src/tokens.css",
+        "runtimeGeneratedBy": "scripts/generate-tokens-css.mjs",
         "editAt": "tokens/design-tokens.json",
         "tokenCount": 7,
         "exportedTokenCount": 3,
@@ -2744,8 +2652,8 @@
         "role": "Component-level visual tokens; kept in Foundation because these are tokens, not React components",
         "sourcePath": "tokens/design-tokens.json",
         "sourceSelector": "collections[name=\"Component\"]",
-        "runtimePath": "src/globals.css",
-        "runtimeGeneratedBy": "scripts/generate-globals-css.mjs",
+        "runtimePath": "src/tokens.css",
+        "runtimeGeneratedBy": "scripts/generate-tokens-css.mjs",
         "editAt": "tokens/design-tokens.json",
         "tokenCount": 118,
         "subgroups": [
@@ -10052,20 +9960,12 @@
           ]
         }
       ],
-      "localCssVariables": [],
-      "platformRuntimeVariables": [],
-      "nonFoundationDependencies": [
-        {
-          "cssVariable": "--docs-wide-surface-width",
-          "classification": "storybook-shell",
-          "status": "should-be-decoupled"
-        },
-        {
-          "cssVariable": "--docs-z-popover",
-          "classification": "storybook-shell",
-          "status": "should-be-decoupled"
-        }
+      "localCssVariables": [
+        "--vlight-message-max-width",
+        "--vlight-message-popover-z-index"
       ],
+      "platformRuntimeVariables": [],
+      "nonFoundationDependencies": [],
       "unresolvedCssVariables": []
     },
     {
@@ -10254,9 +10154,9 @@
         "IconArrowUp",
         "IconFile",
         "IconLoader2",
+        "IconPaperclip",
         "IconPhoto",
         "IconPlayerStop",
-        "IconPlus",
         "IconX"
       ],
       "componentDependencies": [
@@ -10267,15 +10167,11 @@
           ]
         }
       ],
-      "localCssVariables": [],
-      "platformRuntimeVariables": [],
-      "nonFoundationDependencies": [
-        {
-          "cssVariable": "--docs-wide-surface-width",
-          "classification": "storybook-shell",
-          "status": "should-be-decoupled"
-        }
+      "localCssVariables": [
+        "--vlight-prompt-max-width"
       ],
+      "platformRuntimeVariables": [],
+      "nonFoundationDependencies": [],
       "unresolvedCssVariables": []
     },
     {
@@ -10639,6 +10535,7 @@
         "--vlight-select-icon",
         "--vlight-select-icon-size",
         "--vlight-select-placeholder",
+        "--vlight-select-positioner-z-index",
         "--vlight-select-radius"
       ],
       "platformRuntimeVariables": [
@@ -10646,13 +10543,7 @@
         "--available-height",
         "--transform-origin"
       ],
-      "nonFoundationDependencies": [
-        {
-          "cssVariable": "--docs-z-popover",
-          "classification": "storybook-shell",
-          "status": "should-be-decoupled"
-        }
-      ],
+      "nonFoundationDependencies": [],
       "unresolvedCssVariables": []
     },
     {

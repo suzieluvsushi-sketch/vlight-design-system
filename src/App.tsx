@@ -339,18 +339,29 @@ function App() {
         </div>
         <div className="docs-header-actions">
           <Button
-            className="docs-token-download"
+            className="docs-token-download docs-token-download--desktop"
             variant="primary"
             tone="neutral"
             size="small"
             leadingIcon={<IconDownload />}
             aria-label="Download Design token.json"
-            data-tooltip="Download Design token.json"
             type="button"
             onClick={downloadDesignTokens}
           >
             Token.json
           </Button>
+          <Button
+            className="docs-token-download docs-token-download--compact"
+            variant="ghost"
+            tone="neutral"
+            size="small"
+            iconOnly
+            leadingIcon={<IconDownload />}
+            aria-label="Download Design token.json"
+            data-tooltip="Download Design token.json"
+            type="button"
+            onClick={downloadDesignTokens}
+          />
           {!isHistoryPage ? (
             <button
               className="docs-menu-button"
@@ -404,13 +415,13 @@ function App() {
                               <span className="navigation-link__label">{item.label}</span>
                               {!isActive && (item.page === "prompt" || item.page === "message") ? (
                                 <span className="navigation-link__new-tag" aria-hidden="true">
-                                  NEW
+                                  AI
                                 </span>
                               ) : null}
                               {isActive ? (
                                 <span className="navigation-link__active-art" aria-hidden="true">
                                   <img
-                                    src="./menu-assets/navigation-selected-art-v4@3x.png"
+                                    src="./menu-assets/navigation-selected-art-transparent@3x.png"
                                     alt=""
                                   />
                                 </span>

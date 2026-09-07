@@ -4,7 +4,8 @@ import path from "node:path"
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const tokenSourcePath = "tokens/design-tokens.json"
-const tokenRuntimePath = "src/globals.css"
+const tokenRuntimePath = "src/tokens.css"
+const tokenRuntimeGeneratorPath = "scripts/generate-tokens-css.mjs"
 const iconCatalogPath = "src/lib/icon-catalog.ts"
 const iconStylePath = "src/iconography.css"
 
@@ -113,7 +114,7 @@ const foundationCollections = collectionDefinitions.map((definition) => {
     sourcePath: tokenSourcePath,
     sourceSelector: `collections[name=${JSON.stringify(definition.collectionName)}]`,
     runtimePath: tokenRuntimePath,
-    runtimeGeneratedBy: "scripts/generate-globals-css.mjs",
+    runtimeGeneratedBy: tokenRuntimeGeneratorPath,
     editAt: tokenSourcePath,
     tokenCount: tokens.length,
     subgroups: unique(tokens.map((token) => token.path[0])),
@@ -153,7 +154,7 @@ const textStyleEntry = {
   sourcePath: tokenSourcePath,
   sourceSelector: "styles.text",
   runtimePath: tokenRuntimePath,
-  runtimeGeneratedBy: "scripts/generate-globals-css.mjs",
+  runtimeGeneratedBy: tokenRuntimeGeneratorPath,
   editAt: tokenSourcePath,
   tokenCount: textStyles.length,
   subgroups: unique(textStyles.map((style) => style.subgroup)),
@@ -199,7 +200,7 @@ const effectStyleEntry = {
   sourcePath: tokenSourcePath,
   sourceSelector: "styles.effect",
   runtimePath: tokenRuntimePath,
-  runtimeGeneratedBy: "scripts/generate-globals-css.mjs",
+  runtimeGeneratedBy: tokenRuntimeGeneratorPath,
   editAt: tokenSourcePath,
   tokenCount: effectStyles.length,
   exportedTokenCount: exportedEffectCount,
@@ -218,16 +219,6 @@ const foundationEntries = [
   effectStyleEntry,
   foundationCollections[4],
 ]
-
-const shadcnAdapterBlock =
-  globalsCss.match(/\/\* shadcn semantic adapter \*\/([\s\S]*?)\n\s*--radius:/)?.[1] ?? ""
-const shadcnAliases = [...shadcnAdapterBlock.matchAll(/^\s*(--[a-zA-Z0-9_-]+)\s*:/gm)].map(
-  (match) => match[1],
-)
-const tailwindThemeBlock = globalsCss.match(/@theme inline \{([\s\S]*?)\n\}/)?.[1] ?? ""
-const tailwindThemeAliases = [
-  ...tailwindThemeBlock.matchAll(/^\s*(--[a-zA-Z0-9_-]+)\s*:/gm),
-].map((match) => match[1])
 
 const iconCatalogs = [
   { exportName: "basicOutlineIcons", category: "basic", style: "outline" },
@@ -538,7 +529,7 @@ const registry = {
     },
     tokenMachineSource: tokenSourcePath,
     tokenRuntimeArtifact: tokenRuntimePath,
-    tokenRuntimeGeneratedBy: "scripts/generate-globals-css.mjs",
+    tokenRuntimeGeneratedBy: tokenRuntimeGeneratorPath,
     conflictRule:
       "The reviewed published website defines the accepted experience. Token values are edited in the authoring source and synchronized through design-tokens.json; generated CSS must not be edited directly.",
   },
@@ -580,22 +571,6 @@ const registry = {
     sourceOfTruth: tokenSourcePath,
     runtimeArtifact: tokenRuntimePath,
     runtimeArtifactGenerated: true,
-    runtimeAdapters: [
-      {
-        id: "foundation.adapter.shadcn-semantic",
-        name: "shadcn semantic adapter",
-        filePath: tokenRuntimePath,
-        generatedBy: "scripts/generate-globals-css.mjs",
-        aliases: [...shadcnAliases, "--radius"],
-      },
-      {
-        id: "foundation.adapter.tailwind-theme",
-        name: "Tailwind theme adapter",
-        filePath: tokenRuntimePath,
-        generatedBy: "scripts/generate-globals-css.mjs",
-        aliases: tailwindThemeAliases,
-      },
-    ],
     entries: foundationEntries,
   },
   icons: {

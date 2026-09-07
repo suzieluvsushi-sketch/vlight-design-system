@@ -85,10 +85,10 @@
 .menu-example-preview {
   display: flex;
   position: relative;
-  min-height: calc(var(--layout-spacing-16) * 2 + var(--layout-spacing-8));
+  min-height: calc(var(--layout-spacing-16) * 2 + var(--layout-spacing-4));
   align-items: center;
   justify-content: center;
-  padding: var(--layout-padding-xl);
+  padding: var(--layout-padding-lg) var(--layout-padding-xl);
 }
 
 .menu-live-preview {
@@ -212,6 +212,10 @@
 }
 
 @media (max-width: 49rem) {
+  .menu-example-preview {
+    padding: var(--layout-padding-base) var(--layout-padding-lg);
+  }
+
   .menu-page .page-section > * {
     width: calc(100% - var(--layout-padding-lg) * 2);
   }

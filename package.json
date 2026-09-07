@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "build:static-preview": "vite build --config vite.pages.config.ts --outDir static-preview",
-    "lint": "oxlint",
+    "build": "npm run boundaries:validate && tsc -b && vite build",
+    "build:static-preview": "npm run boundaries:validate && vite build --config vite.pages.config.ts --outDir static-preview",
+    "lint": "npm run boundaries:validate && oxlint",
+    "boundaries:validate": "node scripts/validate-boundaries.mjs",
+    "boundaries:snapshot": "node scripts/validate-boundaries.mjs snapshot",
+    "boundaries:verify": "node scripts/validate-boundaries.mjs verify",
     "preview": "vite preview",
     "history:validate": "node scripts/validate-history-log.mjs",
     "registry:generate": "node scripts/generate-registry.mjs",
-    "tokens:css": "node scripts/generate-globals-css.mjs"
+    "tokens:css": "node scripts/generate-tokens-css.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

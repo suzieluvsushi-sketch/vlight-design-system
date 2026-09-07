@@ -121,21 +121,24 @@ export function RadioPage() {
 
           <ExampleCard title="Box style">
             <div className="radio-box-board">
-              <RadioGroup aria-label="Plan" defaultValue="pro">
+              <RadioGroup className="radio-box-group" aria-label="Plan" defaultValue="pro">
                 <RadioField
                   value="starter"
+                  className="radio-box-instance"
                   label="Starter"
                   description="For personal projects."
                   fieldStyle="box"
                 />
                 <RadioField
                   value="pro"
+                  className="radio-box-instance"
                   label="Professional"
                   description="For growing teams."
                   fieldStyle="box"
                 />
                 <RadioField
                   value="enterprise"
+                  className="radio-box-instance"
                   label="Enterprise"
                   description="Custom security and support."
                   fieldStyle="box"

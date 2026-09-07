@@ -1,6 +1,8 @@
 .vlight-prompt-composer {
+  --vlight-prompt-max-width: 640px;
+
   display: grid;
-  width: min(100%, var(--docs-wide-surface-width, 640px));
+  width: min(100%, var(--vlight-prompt-max-width));
   min-width: 0;
   gap: var(--layout-spacing-3);
   padding: var(--layout-padding-md);

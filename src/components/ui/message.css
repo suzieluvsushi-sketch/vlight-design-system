@@ -2,7 +2,10 @@
 .vlight-ai-message,
 .vlight-message-reasoning,
 .vlight-message-sources {
-  width: min(100%, var(--docs-wide-surface-width, 640px));
+  --vlight-message-max-width: 640px;
+  --vlight-message-popover-z-index: 300;
+
+  width: min(100%, var(--vlight-message-max-width));
   min-width: 0;
 }
 
@@ -96,7 +99,7 @@
 .vlight-user-message__edit-hint {
   display: inline-flex;
   position: absolute;
-  z-index: var(--docs-z-popover);
+  z-index: var(--vlight-message-popover-z-index);
   top: calc(100% + var(--layout-spacing-2));
   right: 0;
   width: max-content;
@@ -384,7 +387,7 @@ button.vlight-message-source {
 .vlight-inline-citation__preview {
   display: grid;
   position: absolute;
-  z-index: var(--docs-z-popover);
+  z-index: var(--vlight-message-popover-z-index);
   width: var(--component-menu-surface-width);
   gap: var(--layout-spacing-2);
   padding: var(--layout-padding-md);

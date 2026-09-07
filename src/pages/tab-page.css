@@ -87,10 +87,10 @@
   display: grid;
   position: relative;
   align-content: center;
-  padding: var(--layout-padding-xl);
+  padding: var(--layout-padding-lg) var(--layout-padding-xl);
 }
 
-.tab-live-preview .vlight-tabs__panel {
+.tab-panel-content {
   max-width: var(--docs-copy-width);
   margin-top: var(--layout-spacing-4);
   padding: var(--layout-padding-base);
@@ -207,6 +207,11 @@
 }
 
 @media (max-width: 49rem) {
+  .tab-example-preview,
+  .tab-configuration-list {
+    padding: var(--layout-padding-base) var(--layout-padding-lg);
+  }
+
   .tab-page .page-section > * {
     width: calc(100% - var(--layout-padding-lg) * 2);
   }

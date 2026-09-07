@@ -85,7 +85,7 @@
   display: grid;
   min-width: 0;
   align-content: center;
-  padding: var(--layout-padding-xl);
+  padding: var(--layout-padding-lg) var(--layout-padding-xl);
 }
 
 .prompt-live-board {
@@ -135,5 +135,9 @@
 @media (max-width: 49rem) {
   .prompt-page-section {
     padding-block: var(--layout-padding-xl);
+  }
+
+  .prompt-example-preview {
+    padding: var(--layout-padding-base) var(--layout-padding-lg);
   }
 }

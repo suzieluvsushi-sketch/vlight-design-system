@@ -66,6 +66,7 @@ function DocumentationAlert({ notice, onDismiss }: DocumentationAlertProps) {
   return (
     <div className="documentation-alert" key={notice.id} style={style}>
       <Alert
+        className="documentation-alert-instance"
         tone={notice.tone}
         title={notice.title}
         description={notice.description}

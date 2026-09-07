@@ -9,9 +9,9 @@ import {
   IconArrowUp,
   IconFile,
   IconLoader2,
+  IconPaperclip,
   IconPhoto,
   IconPlayerStop,
-  IconPlus,
   IconX,
 } from "@tabler/icons-react"
 
@@ -19,6 +19,30 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 import "./prompt.css"
+
+const DEFAULT_ACCEPTED_FILE_TYPES = [
+  "image/*",
+  ".pdf",
+  ".docx",
+  ".md",
+  ".txt",
+  ".xlsx",
+].join(",")
+
+const fileMatchesAcceptedTypes = (file: File, acceptedFileTypes: string) => {
+  const fileName = file.name.toLowerCase()
+  const mimeType = file.type.toLowerCase()
+
+  return acceptedFileTypes
+    .split(",")
+    .map((value) => value.trim().toLowerCase())
+    .filter(Boolean)
+    .some((value) => {
+      if (value.startsWith(".")) return fileName.endsWith(value)
+      if (value.endsWith("/*")) return mimeType.startsWith(value.slice(0, -1))
+      return mimeType === value
+    })
+}
 
 type PromptAttachmentType = "file" | "image"
 type PromptAttachmentState = "default" | "hover" | "uploading" | "error"
@@ -157,12 +181,12 @@ function PromptComposer({
   onFilesSelected,
   attachments = [],
   onRemoveAttachment,
-  placeholder = "Write your message...",
+  placeholder = "Ask anything…",
   ariaLabel = "Prompt message",
   uploadLabel = "Add attachment",
   sendLabel = "Send message",
   stopLabel = "Stop response",
-  acceptedFileTypes,
+  acceptedFileTypes = DEFAULT_ACCEPTED_FILE_TYPES,
   disabled = false,
   running = false,
   forceFocus = false,
@@ -173,7 +197,8 @@ function PromptComposer({
   const [internalValue, setInternalValue] = useState(defaultValue)
   const currentValue = value ?? internalValue
   const hasMessage = currentValue.trim().length > 0
-  const submitDisabled = disabled || running || !hasMessage
+  const hasSubmittableContent = hasMessage || attachments.length > 0
+  const submitDisabled = disabled || running || !hasSubmittableContent
 
   const updateValue = (nextValue: string) => {
     if (value === undefined) setInternalValue(nextValue)
@@ -199,7 +224,9 @@ function PromptComposer({
 
   const handleFilesSelected = (event: ChangeEvent<HTMLInputElement>) => {
     const availableSlots = Math.max(0, 4 - attachments.length)
-    const files = Array.from(event.currentTarget.files ?? []).slice(0, availableSlots)
+    const files = Array.from(event.currentTarget.files ?? [])
+      .filter((file) => fileMatchesAcceptedTypes(file, acceptedFileTypes))
+      .slice(0, availableSlots)
     if (files.length > 0) onFilesSelected?.(files)
     event.currentTarget.value = ""
   }
@@ -207,7 +234,7 @@ function PromptComposer({
   return (
     <div
       className={cn("vlight-prompt-composer", forceFocus && "is-focus", className)}
-      data-filled={hasMessage || undefined}
+      data-filled={hasSubmittableContent || undefined}
       data-running={running || undefined}
       data-disabled={disabled || undefined}
       aria-busy={running || undefined}
@@ -241,7 +268,7 @@ function PromptComposer({
           tone="neutral"
           size="small"
           iconOnly
-          leadingIcon={<IconPlus />}
+          leadingIcon={<IconPaperclip />}
           aria-label={uploadLabel}
           disabled={disabled || attachments.length >= 4}
           onClick={() => {

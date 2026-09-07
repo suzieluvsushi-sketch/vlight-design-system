@@ -192,6 +192,7 @@ export function MessagePage() {
               <div className="message-conversation-example">
                 <UserMessage
                   text={conversationUserText}
+                  className="message-conversation-instance"
                   state={conversationUserEditing ? "edit" : "default"}
                   onCopy={copyUserMessage}
                   onEdit={() => {
@@ -210,6 +211,7 @@ export function MessagePage() {
                 />
                 <AiMessage
                   showActions
+                  className="message-conversation-instance"
                   sources={sources}
                   sourcesState={conversationSourcesState}
                   onSourcesStateChange={setConversationSourcesState}

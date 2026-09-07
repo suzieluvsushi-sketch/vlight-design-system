@@ -38,7 +38,7 @@
         "id": "component.message",
         "name": "Message"
       },
-      "summary": "Removed Message-specific overrides from action Buttons.",
+      "summary": "Updated Message action Buttons to use the published Small icon-only Button sizing.",
       "reason": "Use the component library's published Button sizes and prohibit consumers from modifying encapsulated component styles.",
       "changes": [
         {
@@ -51,16 +51,6 @@
           "after": {
             "reference": "Small icon-only Button",
             "value": "32px control / 16px icon"
-          }
-        },
-        {
-          "kind": "guideline",
-          "property": "Component styling",
-          "before": {
-            "value": "Consumer override"
-          },
-          "after": {
-            "value": "Published Button API"
           }
         }
       ],
@@ -168,6 +158,42 @@
       "affectedAssets": [
         "component.tabs",
         "foundation.component-tokens"
+      ]
+    },
+    {
+      "id": "2026-09-06-prompt-runtime-guideline-alignment",
+      "date": "2026-09-06",
+      "object": {
+        "type": "component",
+        "id": "component.prompt",
+        "name": "Prompt"
+      },
+      "summary": "Aligned the Prompt default placeholder and upload icon with its published design guideline.",
+      "reason": "Remove source and guideline differences so the page-building AI kit can make reliable component decisions.",
+      "changes": [
+        {
+          "kind": "guideline",
+          "property": "Default placeholder",
+          "before": {
+            "value": "Write your message..."
+          },
+          "after": {
+            "value": "Ask anything…"
+          }
+        },
+        {
+          "kind": "visual",
+          "property": "Upload action icon",
+          "before": {
+            "reference": "IconPlus"
+          },
+          "after": {
+            "reference": "IconPaperclip"
+          }
+        }
+      ],
+      "affectedAssets": [
+        "component.prompt"
       ]
     }
   ]

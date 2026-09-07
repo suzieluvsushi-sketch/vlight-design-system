@@ -54,7 +54,7 @@ function Alert({
   const resolvedTone = tone ?? "info"
   const ToneIcon = toneIcons[resolvedTone]
   const iconContent = icon === undefined ? <ToneIcon /> : icon
-  const resolvedRole = role ?? (resolvedTone === "warning" || resolvedTone === "error" ? "alert" : "status")
+  const resolvedRole = role ?? "status"
 
   return (
     <div

@@ -152,7 +152,9 @@
 }
 
 .vlight-select__positioner {
-  z-index: var(--docs-z-popover);
+  --vlight-select-positioner-z-index: 300;
+
+  z-index: var(--vlight-select-positioner-z-index);
   width: var(--anchor-width);
   outline: 0;
 }

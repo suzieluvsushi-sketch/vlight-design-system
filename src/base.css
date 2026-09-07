@@ -1,0 +1,20 @@
+@import "./tokens.css";
+
+/* Optional product baseline. It contains no documentation-site layout rules. */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-family: var(--typography-font-family-body), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    min-height: 100svh;
+    margin: 0;
+  }
+}

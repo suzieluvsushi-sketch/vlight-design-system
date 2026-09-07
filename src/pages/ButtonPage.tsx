@@ -11,7 +11,6 @@ import {
 import {
   Button,
   SplitButton,
-  type ButtonProps,
   type SplitButtonMenuItem,
 } from "@/components/ui/button"
 
@@ -43,25 +42,25 @@ function ExampleCard({
   )
 }
 
-function IconOnlySample({
-  label,
-  variant,
-  tone,
-  icon,
-  onAction,
-}: {
+type IconOnlySampleProps = {
   label: string
-  variant: NonNullable<ButtonProps["variant"]>
-  tone: NonNullable<ButtonProps["tone"]>
   icon: ReactNode
   onAction: (label: string) => void
-}) {
+} & (
+  | { variant: "primary" | "secondary"; tone: "brand" | "neutral" }
+  | { variant: "ghost"; tone: "neutral" }
+)
+
+function IconOnlySample(props: IconOnlySampleProps) {
+  const { label, icon, onAction } = props
+
   return (
     <span className="button-tooltip" data-tooltip={label}>
       <Button
         type="button"
-        variant={variant}
-        tone={tone}
+        {...(props.variant === "ghost"
+          ? { variant: "ghost", tone: "neutral" }
+          : { variant: props.variant, tone: props.tone })}
         size="small"
         iconOnly
         leadingIcon={icon}

@@ -40,8 +40,9 @@ npm run build
 
 ## Token 约定
 
-`tokens/design-tokens.json` 是唯一真源。`npm run tokens:css` 会生成 `src/globals.css`，保留
-Base → Semantic → Component 的 CSS 变量引用，并同步导出 Figma effect styles。
+`tokens/design-tokens.json` 是唯一真源。`npm run tokens:css` 会生成 `src/tokens.css`，保留
+Base → Semantic → Component 的 CSS 变量引用，并同步导出 Figma effect styles。`src/base.css`
+提供可选的产品基础样式，`src/globals.css` 只包含文档站规则。
 
 文档站自己的颜色、字体、字号、行高、间距、圆角、边框和阴影均引用生成后的 token 变量。
 
@@ -68,7 +69,13 @@ npm run history:validate
 
 The History page reads this file directly. Documentation-shell changes, including navigation, routing, preview layouts, and the History page itself, are not logged. See `AGENTS.md` and `skills/vlight-design-system-history/SKILL.md` for the mandatory AI workflow.
 
-## Foundation 页面
+## 壳层与设计系统边界
+
+文档站只消费设计系统，不能反向修改 SSOT 或组件。壳层样式使用 `--docs-*`，共享 token 只读；组件内部结构和私有变量不属于壳层 API。详细任务规则见 `AGENTS.md`。
+
+`npm run boundaries:validate` 已接入 build 和 lint，检查反向导入、共享变量覆盖和组件内部选择器。壳层任务开始前用 `npm run boundaries:snapshot -- /tmp/<unique-task>-before.json` 保存上游文件指纹，完成后用 `npm run boundaries:verify -- /tmp/<unique-task>-before.json` 检查增删改。快照不可覆盖，且保留任务开始时已有修改。静态检查不能替代代码审查或文件权限隔离。
+
+### Foundation 页面入口
 
 - `/?page=color`：Base、Semantic 与渐变参考。
 - `/?page=typography`：字体家族、Typography Variables、全部 Figma Text Styles 与使用规范。

@@ -164,6 +164,7 @@ export function InputPage() {
                 <span className="input-board-label">Live · Default / Hover / Focus / Error</span>
                 <Input
                   label="Email address"
+                  className="input-live-field"
                   placeholder="name@company.com"
                   required
                   value={email}

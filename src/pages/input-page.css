@@ -91,7 +91,7 @@
   display: grid;
   min-width: 0;
   align-content: center;
-  padding: var(--layout-padding-xl);
+  padding: var(--layout-padding-lg) var(--layout-padding-xl);
 }
 
 .input-type-board {
@@ -121,7 +121,7 @@
   gap: var(--layout-spacing-3);
 }
 
-.input-live-form > .vlight-input {
+.input-live-field {
   width: 100%;
 }
 
@@ -196,7 +196,7 @@
 
 @media (max-width: 49rem) {
   .input-example-preview {
-    padding: var(--layout-padding-lg);
+    padding: var(--layout-padding-base) var(--layout-padding-lg);
   }
 
   .input-fixed-states {

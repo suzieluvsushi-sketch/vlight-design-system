@@ -8,7 +8,7 @@
   align-items: end;
   justify-content: space-between;
   gap: var(--layout-spacing-6);
-  padding: var(--layout-spacing-10) var(--layout-spacing-10) var(--layout-spacing-8);
+  padding: var(--layout-spacing-8) var(--layout-spacing-10);
 }
 
 .history-heading > div {
@@ -183,13 +183,10 @@
 
 .history-before {
   color: var(--color-semantic-danger-content);
-  text-decoration: line-through;
-  text-decoration-thickness: var(--layout-stroke-width-1);
 }
 
 .history-before.is-empty {
   color: var(--color-semantic-text-tertiary);
-  text-decoration: none;
 }
 
 .history-after {

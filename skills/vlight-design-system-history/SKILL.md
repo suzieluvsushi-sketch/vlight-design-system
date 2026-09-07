@@ -16,6 +16,8 @@ Use this workflow in the same task that implements a qualifying Design System ch
 
 Use the change kinds defined by `history-log.schema.json`. Set `before` to `null` only for additions and `after` to `null` only for removals. Preserve token references and resolved values together when both are known.
 
+Only record changes that alter a published asset's user-visible design or design specification: Foundation token values, aliases or names; Icon inventory or drawings; and reusable Component variants, visual states, dimensions, visual design, design-facing APIs, token dependencies, or published design guidance.
+
 `history-log.json` is append-only historical data. Correct a malformed entry created in the current task, but do not rewrite or delete earlier approved events unless the user explicitly requests a historical correction.
 
-Do not log changes limited to `src/App.tsx`, `src/app.css`, `src/pages/**`, `src/components/docs/**`, routing, navigation, preview layouts, documentation tooling, or the History Log feature itself. Do not generate entries from Git or registry diffs without confirming the intended change and reason from the current request.
+Do not log implementation-only refactors, file or CSS-runtime reorganization, TypeScript-only restrictions, private ownership boundaries, documentation-shell dependencies, changes limited to `src/App.tsx`, `src/app.css`, `src/pages/**`, `src/components/docs/**`, routing, navigation, preview layouts, documentation tooling, or the History Log feature itself. A token or private variable rename that preserves the same rendered design is not a design change. Do not generate entries from Git or registry diffs without confirming the intended change and reason from the current request.

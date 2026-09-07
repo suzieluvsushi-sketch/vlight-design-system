@@ -101,7 +101,7 @@
   display: grid;
   min-width: 0;
   align-content: center;
-  padding: var(--layout-padding-xl);
+  padding: var(--layout-padding-lg) var(--layout-padding-xl);
 }
 
 .select-live-board,
@@ -205,7 +205,7 @@
   }
 
   .select-example-preview {
-    padding: var(--layout-padding-lg);
+    padding: var(--layout-padding-base) var(--layout-padding-lg);
   }
 
   .select-fixed-states {

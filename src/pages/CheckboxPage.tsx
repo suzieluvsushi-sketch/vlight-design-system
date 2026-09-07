@@ -143,12 +143,14 @@ export function CheckboxPage() {
             <div className="checkbox-box-board">
               <CheckboxField
                 label="Accept terms"
+                className="checkbox-box-instance"
                 description="Review the terms before continuing."
                 fieldStyle="box"
                 defaultChecked
               />
               <CheckboxField
                 label="Share analytics"
+                className="checkbox-box-instance"
                 fieldStyle="box"
               />
             </div>

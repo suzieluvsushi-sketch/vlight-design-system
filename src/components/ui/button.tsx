@@ -9,11 +9,15 @@ import {
 } from "react"
 import { Button as ButtonPrimitive } from "@base-ui/react/button"
 import { IconChevronDown, IconLoader2 } from "@tabler/icons-react"
-import { cva, type VariantProps } from "class-variance-authority"
+import { cva } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
 import "./button.css"
+
+type ButtonVariant = "primary" | "secondary" | "ghost" | "outlined"
+type ButtonTone = "brand" | "neutral" | "danger"
+type ButtonSize = "mini" | "small" | "medium" | "large"
 
 const buttonVariants = cva("vlight-button", {
   variants: {
@@ -47,13 +51,36 @@ const buttonVariants = cva("vlight-button", {
   },
 })
 
-type ButtonProps = Omit<ButtonPrimitive.Props, "className"> &
-  VariantProps<typeof buttonVariants> & {
+type ButtonBaseProps = Omit<ButtonPrimitive.Props, "className"> & {
     className?: string
     leadingIcon?: ReactNode
     trailingIcon?: ReactNode
     loading?: boolean
   }
+
+type TextButtonProps = ButtonBaseProps & {
+  variant?: ButtonVariant
+  tone?: ButtonTone
+  size?: ButtonSize
+  iconOnly?: false | null
+}
+
+type IconOnlyButtonProps = ButtonBaseProps &
+  {
+    size?: Exclude<ButtonSize, "mini">
+    iconOnly: true
+  } & (
+    | {
+        variant?: "primary" | "secondary"
+        tone?: "brand" | "neutral"
+      }
+    | {
+        variant: "ghost"
+        tone?: "neutral"
+      }
+  )
+
+type ButtonProps = TextButtonProps | IconOnlyButtonProps
 
 function Button({
   className,

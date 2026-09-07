@@ -90,9 +90,9 @@
 .radio-example-preview {
   display: grid;
   min-width: 0;
-  min-height: calc(var(--layout-spacing-16) * 2);
+  min-height: calc(var(--layout-spacing-16) * 2 - var(--layout-spacing-4));
   align-content: center;
-  padding: var(--layout-padding-xl);
+  padding: var(--layout-padding-lg) var(--layout-padding-xl);
 }
 
 .radio-live-board {
@@ -114,11 +114,11 @@
   gap: var(--layout-spacing-6);
 }
 
-.radio-box-board .vlight-radio-group {
+.radio-box-group {
   width: 100%;
 }
 
-.radio-box-board .vlight-radio-field {
+.radio-box-instance {
   width: 100%;
 }
 
@@ -188,6 +188,6 @@
   }
 
   .radio-example-preview {
-    padding: var(--layout-padding-lg);
+    padding: var(--layout-padding-base) var(--layout-padding-lg);
   }
 }
