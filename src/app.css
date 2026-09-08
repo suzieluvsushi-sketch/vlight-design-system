@@ -426,7 +426,6 @@
 
 .page-section {
   padding-block: var(--layout-padding-3xl);
-  border-top: var(--layout-stroke-width-1) solid var(--color-semantic-border-divider);
   scroll-margin-top: calc(var(--docs-header-height) + var(--layout-spacing-6));
 }
 
@@ -617,6 +616,11 @@
   background: var(--color-semantic-background-surface);
   text-align: left;
   cursor: pointer;
+}
+
+.token-card {
+  display: grid;
+  align-content: start;
 }
 
 .token-card:hover,

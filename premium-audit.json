@@ -12,6 +12,15 @@
     {
       "category": "violation",
       "file": "src/components/ui/tabs.css",
+      "line": 20,
+      "message": "Scrollbar theme does not provide both standards-based scrollbar properties.",
+      "remediation": "Add global scrollbar-color and scrollbar-width standards properties plus fallbacks.",
+      "ruleId": "scrollbar.webkit-only",
+      "severity": "error"
+    },
+    {
+      "category": "violation",
+      "file": "src/globals.css",
       "line": 18,
       "message": "Scrollbar theme does not provide both standards-based scrollbar properties.",
       "remediation": "Add global scrollbar-color and scrollbar-width standards properties plus fallbacks.",
@@ -23,10 +32,10 @@
   "projectRoot": "/Users/xinshu/Documents/codex vibecoding/vlight design system storybook",
   "schemaVersion": 1,
   "summary": {
-    "errors": 2,
-    "total": 2,
+    "errors": 3,
+    "total": 3,
     "unresolved": 1,
-    "violations": 1,
+    "violations": 2,
     "warnings": 0
   }
 }
