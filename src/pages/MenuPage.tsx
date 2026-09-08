@@ -157,7 +157,7 @@ export function MenuPage() {
     <article className="docs-page menu-page">
       <div className="page-intro menu-hero" aria-labelledby="menu-title">
         <div className="menu-hero-copy">
-          <h1 id="menu-title">Menu</h1>
+          <h1 className="docs-hero-title" id="menu-title">Menu</h1>
           <p>
             Menus present a concise set of temporary actions near their trigger while preserving
             context and predictable keyboard behavior.

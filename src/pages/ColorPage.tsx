@@ -141,7 +141,7 @@ export function ColorPage() {
     <article className="docs-page color-page">
       <div className="page-intro color-hero">
         <div className="color-hero-copy">
-          <h1>Color</h1>
+          <h1 className="docs-hero-title">Color</h1>
           <p>
             VLight color foundations, base palettes, semantic roles, and approved gradients. Select any
             color or gradient to copy its value.

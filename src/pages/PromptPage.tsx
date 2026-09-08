@@ -132,7 +132,7 @@ export function PromptPage() {
     <article className="docs-page prompt-page">
       <div className="page-intro prompt-hero" aria-labelledby="prompt-title">
         <div className="prompt-hero-copy">
-          <h1 id="prompt-title">Prompt</h1>
+          <h1 className="docs-hero-title" id="prompt-title">Prompt</h1>
           <p>Compose a message with up to four file or image attachments.</p>
         </div>
         <div className="prompt-hero-art" aria-hidden="true">

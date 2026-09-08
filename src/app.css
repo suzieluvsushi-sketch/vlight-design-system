@@ -1990,6 +1990,52 @@
 
 }
 
+@property --docs-hero-gradient-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 90deg;
+}
+
+.docs-page .page-intro .docs-hero-title {
+  background-image: linear-gradient(
+    var(--docs-hero-gradient-angle),
+    var(--color-base-primary-400) 0%,
+    var(--color-base-primary-300) 62%,
+    var(--color-base-blue-500) 100%
+  );
+  background-size: 100% 100%;
+  background-position: 0% 50%;
+}
+
+@keyframes docs-hero-gradient-flow {
+  from {
+    --docs-hero-gradient-angle: 90deg;
+    background-size: 100% 100%;
+    background-position: 0% 50%;
+  }
+  35% {
+    --docs-hero-gradient-angle: 45deg;
+    background-size: 240% 180%;
+    background-position: 45% 0%;
+  }
+  70% {
+    --docs-hero-gradient-angle: 135deg;
+    background-size: 380% 240%;
+    background-position: 80% 100%;
+  }
+  to {
+    --docs-hero-gradient-angle: 90deg;
+    background-size: 500% 100%;
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .docs-hero-title {
+    animation: docs-hero-gradient-flow 3.5s ease-in-out infinite alternate;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .docs-nav-backdrop,
   .docs-sidebar {

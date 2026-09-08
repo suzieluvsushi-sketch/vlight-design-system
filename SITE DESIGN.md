@@ -173,7 +173,7 @@ When an approved decorative Hero asset exists, scale its complete desktop artwor
 | `< 1280px` | Hide the Hero illustration completely while preserving the Hero container and copy width. This applies to every page; do not retain a page-specific illustration exception below this breakpoint. |
 | `< 1152px` | Collapse the preview grid to one column; wide cards return to normal single-column flow. |
 | `< 784px` | Sidebar returns to document flow; main padding becomes `32px 24px 24px`; Hero remains `200px` high with the copy still `36px` from the bottom, horizontal padding becomes `24px`, and title becomes `32px / 40px`; every section content rail switches with the Hero text gutter to `24px` on both sides. |
-| `< 512px` | The Header may collapse secondary labels; the token download becomes a neutral Ghost icon button matching the adjacent Menu button's `32px × 32px` control with a `16px` icon, and reveals the below-button `Download Design token.json` tooltip on hover or keyboard focus. Retain the `< 784px` component-page rules. |
+| `< 512px` | The Header may collapse secondary labels; the token download becomes a Primary Neutral icon-only button matching the adjacent Menu button's `32px × 32px` control with a `16px` icon, and reveals the below-button `Download Design token.json` tooltip on hover or keyboard focus. Retain the `< 784px` component-page rules. |
 
 Do not squeeze Hero artwork behind text or progressively shrink it at intermediate widths. Keep the approved `200 / 226` desktop scale unchanged through `1280px`; below `1280px`, switch every Hero directly to the copy-only composition.
 

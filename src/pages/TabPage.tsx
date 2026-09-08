@@ -105,7 +105,7 @@ export function TabPage() {
     <article className="docs-page tab-page">
       <div className="page-intro tab-hero" aria-labelledby="tab-title">
         <div className="tab-hero-copy">
-          <h1 id="tab-title">Tabs</h1>
+          <h1 className="docs-hero-title" id="tab-title">Tabs</h1>
           <p>
             Tabs switch between related views while keeping people in the same context.
             Use the contained style for compact, clearly grouped navigation.

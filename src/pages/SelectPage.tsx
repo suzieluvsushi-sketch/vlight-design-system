@@ -65,7 +65,7 @@ export function SelectPage() {
     <article className="docs-page select-page">
       <div className="page-intro select-hero">
         <div className="select-hero-copy">
-          <h1>Select</h1>
+          <h1 className="docs-hero-title">Select</h1>
           <p>
             Select lets people choose one value from a predefined list while keeping the field,
             listbox, and option states connected.

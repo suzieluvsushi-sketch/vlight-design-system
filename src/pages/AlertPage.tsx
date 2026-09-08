@@ -91,7 +91,7 @@ export function AlertPage() {
     <article className="docs-page alert-page">
       <div className="page-intro alert-hero">
         <div className="alert-hero-copy">
-          <h1>Alert</h1>
+          <h1 className="docs-hero-title">Alert</h1>
           <p>
             Alerts communicate important contextual information with a semantic tone, concise
             message, and an optional next action.

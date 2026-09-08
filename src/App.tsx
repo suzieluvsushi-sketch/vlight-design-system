@@ -352,7 +352,7 @@ function App() {
           </Button>
           <Button
             className="docs-token-download docs-token-download--compact"
-            variant="ghost"
+            variant="primary"
             tone="neutral"
             size="small"
             iconOnly

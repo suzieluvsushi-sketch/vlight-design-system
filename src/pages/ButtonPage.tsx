@@ -117,7 +117,7 @@ export function ButtonPage() {
     <article className="docs-page button-page">
       <div className="page-intro button-hero">
         <div className="button-hero-copy">
-          <h1>Button</h1>
+          <h1 className="docs-hero-title">Button</h1>
           <p>
             Buttons trigger actions. VLight combines visual emphasis with semantic tone so each
             control communicates both priority and consequence.

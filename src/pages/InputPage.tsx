@@ -72,7 +72,7 @@ export function InputPage() {
     <article className="docs-page input-page">
       <div className="page-intro input-hero">
         <div className="input-hero-copy">
-          <h1>Input</h1>
+          <h1 className="docs-hero-title">Input</h1>
           <p>
             Inputs collect short values and keep labels, guidance, validation, and interaction
             feedback connected as one field.

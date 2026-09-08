@@ -2,6 +2,13 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import { inspect } from './validate-boundaries.mjs'
 
+test('shell scrollbar rules cannot target all elements or inherit into components', () => {
+  assert.ok(inspect('src/globals.css', '* { scrollbar-width: thin; }').length)
+  assert.ok(inspect('src/globals.css', '*::-webkit-scrollbar { width: 8px; }').length)
+  assert.ok(inspect('src/globals.css', '.docs-shell { scrollbar-color: gray white; }').length)
+  assert.deepEqual(inspect('src/globals.css', '.docs-sidebar::-webkit-scrollbar { width: 8px; }'), [])
+})
+
 test('DS cannot import the shell, including through shared utilities', () => {
   assert.ok(inspect('src/components/ui/button.tsx', 'import "../../app.css"').length)
   assert.ok(inspect('src/lib/utils.ts', 'export { x } from "../pages/example"').length)

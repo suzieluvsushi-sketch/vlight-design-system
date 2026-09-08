@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url'
 import ts from 'typescript'
 
 const root = fileURLToPath(new URL('../', import.meta.url))
-const protectedRoots = ['tokens', 'src/components/ui', 'src/tokens.css', 'src/base.css', 'src/iconography.css', 'src/lib/utils.ts', 'src/lib/icon-catalog.ts', 'public/icon-assets/social', 'registry.json', 'history-log.json', 'scripts/generate-tokens-css.mjs', 'scripts/generate-registry.mjs', 'vlight-page-builder', 'vlight-page-builder.zip']
+const protectedRoots = ['tokens', 'src/components/ui', 'src/tokens.css', 'src/base.css', 'src/iconography.css', 'src/lib/utils.ts', 'src/lib/icon-catalog.ts', 'public/icon-assets/social', 'registry.json', 'history-log.json', 'scripts/generate-tokens-css.mjs', 'scripts/generate-registry.mjs']
 const within = (file, prefix) => file === prefix || file.startsWith(`${prefix}/`)
 const protectedFile = file => protectedRoots.some(prefix => within(file, prefix))
 function files(relative) {
@@ -33,6 +33,8 @@ export function inspect(file, source) {
   }
   if (upstream && /--docs-|--documentation-/.test(text)) errors.push('upstream references shell variables')
   if (!upstream && css) {
+    if (/scrollbar-color\s*:/.test(text)) errors.push('shell scrollbar-color inherits into components; use non-inheriting shell pseudo-elements')
+    if (/\*\s*(?:::?-?[\w-]+(?:\([^)]*\))?)*\s*\{[^{}]*scrollbar/s.test(text) || /\*::-(?:webkit|moz)-scrollbar/.test(text)) errors.push('universal shell scrollbar styling reaches components')
     for (const [, name] of text.matchAll(/(--[\w-]+)\s*:/g)) if (reserved(name)) errors.push(`shell defines protected variable: ${name}`)
     if (/\.vlight-/.test(text)) errors.push('shell selector reaches component internals')
   }

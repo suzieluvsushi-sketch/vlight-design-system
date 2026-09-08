@@ -52,7 +52,7 @@ export function RadioPage() {
     <article className="docs-page radio-page">
       <div className="page-intro radio-hero">
         <div className="radio-hero-copy">
-          <h1>Radio</h1>
+          <h1 className="docs-hero-title">Radio</h1>
           <p>
             Radio lets people select one option from a visible set, keeping labels, supporting
             information, and selection state in one accessible control.

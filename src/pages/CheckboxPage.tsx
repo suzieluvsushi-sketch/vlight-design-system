@@ -62,7 +62,7 @@ export function CheckboxPage() {
     <article className="docs-page checkbox-page">
       <div className="page-intro checkbox-hero">
         <div className="checkbox-hero-copy">
-          <h1>Checkbox</h1>
+          <h1 className="docs-hero-title">Checkbox</h1>
           <p>
             Checkbox lets people independently select one or more options, confirm a choice, or
             include an item in a larger set.

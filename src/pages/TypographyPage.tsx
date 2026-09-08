@@ -128,7 +128,7 @@ export function TypographyPage() {
     <article className="docs-page typography-page">
       <div className="page-intro typography-hero">
         <div className="typography-hero-copy">
-          <h1>Typography</h1>
+          <h1 className="docs-hero-title">Typography</h1>
           <p>
             VLight typography foundations, usage boundaries, and every Figma Text Style in the
             canonical token source.

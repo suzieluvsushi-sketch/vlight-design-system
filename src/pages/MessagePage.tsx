@@ -160,7 +160,7 @@ export function MessagePage() {
     <article className="docs-page message-page">
       <div className="page-intro message-hero">
         <div className="message-hero-copy">
-          <h1 id="message-title">Message</h1>
+          <h1 className="docs-hero-title" id="message-title">Message</h1>
           <p>Conversation messages for user input, AI progress, reasoning, and response actions.</p>
         </div>
         <div className="message-hero-art" aria-hidden="true">

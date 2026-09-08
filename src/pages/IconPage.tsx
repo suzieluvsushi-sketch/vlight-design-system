@@ -120,7 +120,7 @@ export function IconPage() {
     <article className="docs-page icon-page">
       <div className="page-intro icon-hero">
         <div className="icon-hero-copy">
-          <h1>Icon</h1>
+          <h1 className="docs-hero-title">Icon</h1>
           <p>
             VLight icons use Tabler as the canonical drawing source, organized into basic, product,
             social, and optical-size sets.

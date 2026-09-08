@@ -8,32 +8,33 @@ body {
 }
 
 @media (forced-colors: none) {
-  * {
-    scrollbar-color: var(--color-semantic-text-tertiary)
-      var(--color-semantic-background-subtle);
+  /* Only shell-owned scroll containers. scrollbar-color is intentionally not
+     set: it inherits into component descendants even with scoped selectors.
+     Pseudo-element paint below does not inherit. */
+  :where(html, .docs-sidebar, .reference-table-shell, .code-example, .badge-matrix-shell, .tab-configuration-scroll, .tab-props-table-wrap, .menu-props-table-wrap) {
     scrollbar-width: thin;
   }
 
-  *::-webkit-scrollbar {
+  :where(html, .docs-sidebar, .reference-table-shell, .code-example, .badge-matrix-shell, .tab-configuration-scroll, .tab-props-table-wrap, .menu-props-table-wrap)::-webkit-scrollbar {
     width: var(--layout-spacing-2);
     height: var(--layout-spacing-2);
   }
 
-  *::-webkit-scrollbar-track {
+  :where(html, .docs-sidebar, .reference-table-shell, .code-example, .badge-matrix-shell, .tab-configuration-scroll, .tab-props-table-wrap, .menu-props-table-wrap)::-webkit-scrollbar-track {
     background: var(--color-semantic-background-subtle);
   }
 
-  *::-webkit-scrollbar-thumb {
+  :where(html, .docs-sidebar, .reference-table-shell, .code-example, .badge-matrix-shell, .tab-configuration-scroll, .tab-props-table-wrap, .menu-props-table-wrap)::-webkit-scrollbar-thumb {
     background: var(--color-semantic-text-tertiary);
     border: var(--layout-stroke-width-2) solid var(--color-semantic-background-subtle);
     border-radius: var(--layout-radius-full);
   }
 
-  *::-webkit-scrollbar-thumb:hover {
+  :where(html, .docs-sidebar, .reference-table-shell, .code-example, .badge-matrix-shell, .tab-configuration-scroll, .tab-props-table-wrap, .menu-props-table-wrap)::-webkit-scrollbar-thumb:hover {
     background: var(--color-semantic-text-secondary);
   }
 
-  *::-webkit-scrollbar-thumb:active {
+  :where(html, .docs-sidebar, .reference-table-shell, .code-example, .badge-matrix-shell, .tab-configuration-scroll, .tab-props-table-wrap, .menu-props-table-wrap)::-webkit-scrollbar-thumb:active {
     background: var(--color-semantic-text-primary);
   }
 }

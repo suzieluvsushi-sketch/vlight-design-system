@@ -84,7 +84,7 @@ export function BadgePage() {
     <article className="docs-page badge-page">
       <div className="page-intro badge-hero">
         <div className="badge-hero-copy">
-          <h1>Badge</h1>
+          <h1 className="docs-hero-title">Badge</h1>
           <p>
             Badges communicate compact metadata, qualifications, categories, and status without
             interrupting the surrounding task.
