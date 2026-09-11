@@ -421,9 +421,13 @@ function App() {
                               {isActive ? (
                                 <span className="navigation-link__active-art" aria-hidden="true">
                                   <img
+                                    className="docs-nav-character"
                                     src="./menu-assets/navigation-selected-art-transparent@3x.png"
                                     alt=""
                                   />
+                                  <span className="docs-nav-star">
+                                    <img src="./menu-assets/navigation-star-2198.svg" alt="" />
+                                  </span>
                                 </span>
                               ) : null}
                             </a>

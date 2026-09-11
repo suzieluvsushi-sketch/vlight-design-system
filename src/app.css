@@ -228,6 +228,33 @@
   display: block;
 }
 
+.docs-nav-star {
+  position: absolute;
+  left: 63.431px;
+  top: 16.431px;
+  width: 10.254px;
+  height: 10.254px;
+  transform-origin: center;
+}
+
+/* Retain the approved transparent character; exclude its baked-in star. */
+.docs-nav-character {
+  clip-path: inset(0 36% 0 0);
+}
+
+@keyframes docs-nav-star-appear {
+  0% { opacity: 0; transform: scale(0.3) rotate(-8deg); }
+  55% { opacity: 1; transform: scale(1.2) rotate(4deg); }
+  75% { opacity: 1; transform: scale(0.92) rotate(-2deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .docs-nav-star {
+    animation: docs-nav-star-appear 600ms ease-out 130ms both;
+  }
+}
+
 .navigation-empty {
   color: var(--color-semantic-text-tertiary);
   font-size: var(--typography-font-size-12);
